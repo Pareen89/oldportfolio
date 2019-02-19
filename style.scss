@@ -16,226 +16,248 @@ $breakpoint:
 */
 // 1em = 16px
 @mixin respond($breakpoint) {
-  @if $breakpoint==phone {
-    @media only screen and (max-width: 37.5em) {
-      @content;
+    @if $breakpoint==phone {
+        @media only screen and (max-width: 37.5em) {
+            @content;
+        }
+
+        //600px
     }
 
-    //600px
-  }
+    @if $breakpoint==tab-port {
+        @media only screen and (max-width: 56.25em) {
+            @content;
+        }
 
-  @if $breakpoint==tab-port {
-    @media only screen and (max-width: 56.25em) {
-      @content;
+        // 900px
     }
 
-    // 900px
-  }
+    @if $breakpoint==tab-land {
+        @media only screen and (max-width: 75em) {
+            @content;
+        }
 
-  @if $breakpoint==tab-land {
-    @media only screen and (max-width: 75em) {
-      @content;
+        //1200px
     }
 
-    //1200px
-  }
+    @if $breakpoint==sm {
+        @media only screen and (max-width: 85.375em) {
+            @content;
+        }
 
-  @if $breakpoint==sm {
-    @media only screen and (max-width: 85.375em) {
-      @content;
+        //1350px
     }
-
-    //1350px
-  }
 }
 
 //****************************//
 //           Mixin            //
 //****************************//
 @mixin position($x-position, $y-position) {
-  position: absolute;
-  top: $x-position;
-  left: $y-position;
-  transform: translate(-50%, -50%);
+    position: absolute;
+    top: $x-position;
+    left: $y-position;
+    transform: translate(-50%, -50%);
 }
 
 //****************************//
 //            Root            //
 //****************************//
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 html {
-  // defines what 1rem is
-  font-size: 62.5%; // 1rem =10px; 10px/16px = 62.5%
+    // defines what 1rem is
+    font-size: 62.5%; // 1rem =10px; 10px/16px = 62.5%
 
-  //   @include respond(tab-land) {
-  //     font-size: 56.25%; // 1rem = 9px 9/16= 56.25%
-  //   }
+    //   @include respond(tab-land) {
+    //     font-size: 56.25%; // 1rem = 9px 9/16= 56.25%
+    //   }
 
-  //   @include respond(tab-port) {
-  //     font-size: 50%; // 1rem = 8px. 8/16 = 50%
-  //   }
+    //   @include respond(tab-port) {
+    //     font-size: 50%; // 1rem = 8px. 8/16 = 50%
+    //   }
 
-  @include respond(phone) {
-    font-size: 55%;
-  }
+    @include respond(phone) {
+        font-size: 55%;
+    }
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 //****************************//
 //        Background          //
 //****************************//
 .background {
-  background-image: url("img/bg.jpg");
-  height: 100vh;
-  width: 100vw;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+    background-image: url("img/bg.jpg");
+    height: 100vh;
+    width: 100vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .container {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(12, 1fr);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
 }
 
 //****************************//
 //          Taskbar           //
 //****************************//
 .topTaskbar {
-  display: none;
+    display: none;
 
-  @include respond(phone) {
-    display: grid;
-    grid-row: 1/2;
-  }
+    @include respond(phone) {
+        display: grid;
+        grid-row: 1/2;
+    }
 }
 
 .topTaskbar,
 .mainTaskbar {
-  height: 4.15rem;
-  width: 100vw;
-  background-color: rgba(12, 12, 12, 0.7);
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 1fr;
-  overflow: hidden;
-
-  @include respond(phone) {
-    grid-template-columns: 1fr;
-  }
-}
-// main taskbar
-.mainTaskbar {
-  grid-row: 12/13;
-  grid-column: 1/13;
-  display: grid;
-  align-self: end;
-
-  &__list {
-    display: flex;
-    list-style-type: none;
-    align-self: center;
-
-    @include respond(phone) {
-      justify-content: space-evenly;
-    }
-
-    :hover {
-      background-color: rgb(40, 40, 40);
-    }
-
-    &-icons {
-      color: white;
-      font-size: 2rem;
-      padding: 0.75rem 1.5rem;
-      transition: all 0.3s ease-in-out;
-    }
-
-    .windows:hover {
-      color: rgb(30, 144, 255);
-    }
-
-    .compress {
-      display: none;
-    }
-
-    .github {
-      color: rgba(68, 108, 179, 1);
-    }
-
-    .linkedin {
-      color: rgb(0, 119, 181);
-    }
-
-    .codepen {
-      color: rgb(120, 120, 120);
-    }
-
-    .paint {
-      color: rgba(230, 126, 34, 1);
-    }
-  }
-}
-// Time, date, about
-.timedate {
-  grid-column: 2/13;
-  display: none;
-  list-style-type: none;
-  color: white;
-  align-self: center;
-  justify-self: end;
-  @include respond(phone) {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
     height: 4.15rem;
     width: 100vw;
-  }
-  :hover {
-    background-color: rgb(40, 40, 40);
-  }
+    background-color: rgba(12, 12, 12, 0.7);
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr;
+    overflow: hidden;
 
-  &__list {
-    padding: 0.45rem 1.5rem;
     @include respond(phone) {
+        grid-template-columns: 1fr;
     }
-  }
-
-  .time {
-    font-size: 1.2rem;
-  }
-
-  .icon {
-    font-size: 2rem;
-  }
 }
-.bottom {
-  display: flex;
-  @include respond(phone) {
-    display: none;
-  }
-}
-.top {
-  display: grid;
-  @include respond(phone) {
+
+// main taskbar
+.mainTaskbar {
+    grid-row: 12/13;
     grid-column: 1/13;
-  }
+    display: grid;
+    align-self: end;
+
+    &__list {
+        display: flex;
+        list-style-type: none;
+        align-self: center;
+
+        @include respond(phone) {
+            justify-content: space-evenly;
+        }
+
+        :hover {
+            background-color: rgb(40, 40, 40);
+        }
+
+        &-icons {
+            color: white;
+            font-size: 2rem;
+            padding: 0.75rem 1.5rem;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .windows:hover {
+            color: rgb(30, 144, 255);
+        }
+
+        .compress {
+            display: none;
+        }
+
+        .github {
+            color: rgba(68, 108, 179, 1);
+        }
+
+        .linkedin {
+            color: rgb(0, 119, 181);
+        }
+
+        .codepen {
+            color: rgb(120, 120, 120);
+        }
+
+        .paint {
+            color: rgba(230, 126, 34, 1);
+        }
+    }
 }
+
+// Time, date, about
+.timedate {
+    grid-column: 2/13;
+    display: none;
+    list-style-type: none;
+    color: white;
+    align-self: center;
+    justify-self: end;
+
+    :hover {
+        background-color: rgb(40, 40, 40);
+    }
+
+    @include respond(phone) {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        height: 4.15rem;
+        width: 100vw;
+    }
+
+    &__list {
+        padding: 0.45rem 1.5rem;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .time {
+        font-size: 1.2rem;
+
+        @include respond(phone) {
+            padding-top: 1rem;
+            font-size: 1.6rem;
+            font-weight: bold;
+
+        }
+    }
+
+    #date {
+        @include respond(phone) {
+            display: none;
+        }
+    }
+
+    .icon {
+        font-size: 2rem;
+    }
+}
+
+.bottom {
+    display: flex;
+
+    @include respond(phone) {
+        display: none;
+    }
+}
+
+.top {
+    display: grid;
+
+    @include respond(phone) {
+        grid-column: 1/13;
+    }
+}
+
 .center {
-  justify-self: center;
-  grid-row: 1/2;
-  grid-column: 1/2;
+    justify-self: center;
+    grid-row: 1/2;
+    grid-column: 1/2;
 }
+
 .right {
-  justify-self: end;
-  grid-row: 1/2;
-  grid-column: 1/2;
+    justify-self: end;
+    grid-row: 1/2;
+    grid-column: 1/2;
 }

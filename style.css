@@ -164,6 +164,10 @@ body {
       justify-self: end;
 }
 
+.timedate :hover {
+  background-color: #282828;
+}
+
 @media only screen and (max-width: 37.5em) {
   .timedate {
     display: -ms-grid;
@@ -177,16 +181,28 @@ body {
   }
 }
 
-.timedate :hover {
-  background-color: #282828;
-}
-
 .timedate__list {
   padding: 0.45rem 1.5rem;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .timedate .time {
   font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .timedate .time {
+    padding-top: 1rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .timedate #date {
+    display: none;
+  }
 }
 
 .timedate .icon {
