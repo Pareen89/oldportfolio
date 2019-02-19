@@ -194,6 +194,7 @@ body {
     color: white;
     align-self: center;
     justify-self: end;
+    text-align: center;
 
     :hover {
         background-color: rgb(40, 40, 40);
@@ -216,10 +217,8 @@ body {
         font-size: 1.2rem;
 
         @include respond(phone) {
+            font-size: 1.4rem;
             padding-top: 1rem;
-            font-size: 1.6rem;
-            font-weight: bold;
-
         }
     }
 
