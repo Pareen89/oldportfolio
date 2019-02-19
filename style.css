@@ -22,12 +22,6 @@ html {
   font-size: 62.5%;
 }
 
-@media only screen and (max-width: 37.5em) {
-  html {
-    font-size: 55%;
-  }
-}
-
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -39,15 +33,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.container {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[12];
-      grid-template-columns: repeat(12, 1fr);
-  -ms-grid-rows: (1fr)[12];
-      grid-template-rows: repeat(12, 1fr);
 }
 
 .topTaskbar {
@@ -95,6 +80,8 @@ body {
   display: grid;
   -ms-grid-row-align: end;
       align-self: end;
+  position: absolute;
+  bottom: 0;
 }
 
 .mainTaskbar__list {
@@ -108,9 +95,9 @@ body {
 
 @media only screen and (max-width: 37.5em) {
   .mainTaskbar__list {
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 
@@ -126,8 +113,24 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
+@media only screen and (max-width: 37.5em) {
+  .mainTaskbar__list .windows {
+    display: none;
+  }
+}
+
 .mainTaskbar__list .windows:hover {
   color: dodgerblue;
+}
+
+.mainTaskbar__list .poweroff {
+  display: none;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .mainTaskbar__list .poweroff {
+    display: initial;
+  }
 }
 
 .mainTaskbar__list .compress {
@@ -148,6 +151,12 @@ body {
 
 .mainTaskbar__list .paint {
   color: #e67e22;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .mainTaskbar__list .paint {
+    display: none;
+  }
 }
 
 .timedate {
@@ -254,5 +263,54 @@ body {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1/2;
+}
+
+.startMenu {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  bottom: 4.2rem;
+  height: 50rem;
+  width: 32rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .startMenu {
+    width: 100%;
+    height: calc(100vh - 8.4rem);
+  }
+}
+
+.startMenu__power {
+  height: 100%;
+  width: 4.7rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+}
+
+.startMenu .power {
+  font-size: 2rem;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  padding: 1.2rem 1.38rem;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  color: white;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .startMenu .power {
+    display: none;
+  }
+}
+
+.startMenu .power:hover {
+  background-color: #282828;
 }
 /*# sourceMappingURL=style.css.map */
