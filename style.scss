@@ -1,0 +1,90 @@
+//****************************//
+//        Media Query         //
+//****************************//
+/*
+@ - 600px:    Phone
+600 - 900px:  Tablet Portrait
+900 - 1200px:  Tablet LandScape
+[1200 - 1800px:]  Normal Style
+1800+       :  Big Desktop
+
+$breakpoint:
+-phone
+-tab-port
+-tab-land
+-big-desktop
+*/
+// 1em = 16px
+@mixin respond($breakpoint) {
+    @if $breakpoint==phone {
+        @media only screen and (max-width: 37.5em) {
+            @content;
+        }
+
+        //600px
+    }
+
+    @if $breakpoint==tab-port {
+        @media only screen and (max-width: 56.25em) {
+            @content;
+        }
+
+        // 900px
+    }
+
+    @if $breakpoint==tab-land {
+        @media only screen and (max-width: 75em) {
+            @content;
+        }
+
+        //1200px
+    }
+
+    @if $breakpoint==sm {
+        @media only screen and (max-width: 85.375em) {
+            @content;
+        }
+
+        //1350px
+    }
+}
+
+//****************************//
+//           Mixin            //
+//****************************//
+@mixin position($x-position, $y-position) {
+    position: absolute;
+    top: $x-position;
+    left: $y-position;
+    transform: translate(-50%, -50%);
+}
+
+//****************************//
+//            Root            //
+//****************************//
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    // defines what 1rem is
+    font-size: 62.5%; // 1rem =10px; 10px/16px = 62.5%
+
+    @include respond(tab-land) {
+        font-size: 56.25%; // 1rem = 9px 9/16= 56.25%
+    }
+
+    @include respond(tab-port) {
+        font-size: 50%; // 1rem = 8px. 8/16 = 50%
+    }
+
+    @include respond(phone) {
+        font-size: 55%;
+    }
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
