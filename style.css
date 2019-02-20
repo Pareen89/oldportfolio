@@ -391,18 +391,29 @@ body {
   height: 6.5rem;
 }
 
+.folders__list-items .file {
+  color: #ece3e3;
+}
+
+.folders__list-items .folder {
+  color: #ffd097;
+}
+
 .folders__list-items:hover {
   background-color: rgba(255, 255, 255, 0.6);
 }
 
 .folders__list-items-folder {
   font-size: 4rem;
-  color: white;
 }
 
 .folders__list-items-title {
   font-size: 1.3rem;
   color: white;
   cursor: context-menu;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 /*# sourceMappingURL=style.css.map */

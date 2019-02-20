@@ -389,17 +389,23 @@ body {
       margin-bottom: 3rem;
       width: 6rem;
       height: 6.5rem;
+      .file {
+        color: rgb(236, 227, 227);
+      }
+      .folder {
+        color: rgb(255, 208, 151);
+      }
       &:hover {
         background-color: rgba(255, 255, 255, 0.6);
       }
       &-folder {
         font-size: 4rem;
-        color: white;
       }
       &-title {
         font-size: 1.3rem;
         color: white;
         cursor: context-menu;
+        user-select: none;
       }
     }
   }

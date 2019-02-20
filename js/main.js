@@ -11,6 +11,9 @@ let about = document.getElementById('about');
 let startMenu = document.getElementById('startMenu');
 let windows = document.getElementById('windows');
 let aboutme = document.getElementById('aboutme');
+let resumeFile = document.getElementById('resumeFile');
+let projectsFolder = document.getElementById('projectsFolder');
+
 
 /////////////////////////////////////////////
 //////////////////Start Menu ///////////////
@@ -96,3 +99,23 @@ function timeAndDate() {
     document.getElementById("date1").innerHTML = date;
 }
 var update = setInterval(timeAndDate, 1000);
+/////////////////////////////////////////////
+////////////////Folder Click////////////////
+///////////////////////////////////////////
+resumeFile.addEventListener('click', function () {
+    resumeFile.style.backgroundColor = "rgba(255, 255, 255, 0.6)";
+})
+projectsFolder.addEventListener('click', function () {
+    projectsFolder.style.backgroundColor = "rgba(255, 255, 255, 0.6)";
+})
+
+window.addEventListener('mouseup', function (event) {
+    if (event.target !== resumeFile) {
+        resumeFile.style.backgroundColor = "transparent";
+    }
+})
+window.addEventListener('mouseup', function (event) {
+    if (event.target !== projectsFolder) {
+        projectsFolder.style.backgroundColor = "transparent";
+    }
+})
