@@ -1,0 +1,348 @@
+/*
+@ - 600px:    Phone
+600 - 900px:  Tablet Portrait
+900 - 1200px:  Tablet LandScape
+[1200 - 1800px:]  Normal Style
+1800+       :  Big Desktop
+
+$breakpoint:
+-phone
+-tab-port
+-tab-land
+-big-desktop
+*/
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff;
+  }
+  to {
+    text-shadow: 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff, 0 0 80px #fff, 0 0 90px #fff, 0 0 100px #fff;
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff;
+  }
+  to {
+    text-shadow: 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff, 0 0 80px #fff, 0 0 90px #fff, 0 0 100px #fff;
+  }
+}
+
+.background {
+  background-image: url("img/bg.jpg");
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.topTaskbar {
+  display: none;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .topTaskbar {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+  }
+}
+
+.topTaskbar,
+.mainTaskbar {
+  height: 4.15rem;
+  width: 100vw;
+  background-color: rgba(12, 12, 12, 0.7);
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .topTaskbar,
+  .mainTaskbar {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+.mainTaskbar {
+  -ms-grid-row: 12;
+  -ms-grid-row-span: 1;
+  grid-row: 12/13;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 12;
+  grid-column: 1/13;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row-align: end;
+      align-self: end;
+  position: absolute;
+  bottom: 0;
+}
+
+.mainTaskbar__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .mainTaskbar__list {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.mainTaskbar__list :hover {
+  background-color: #282828;
+}
+
+.mainTaskbar__list-icons {
+  color: white;
+  font-size: 2rem;
+  padding: 0.75rem 1.5rem;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .mainTaskbar__list .windows {
+    display: none;
+  }
+}
+
+.mainTaskbar__list .windows:hover {
+  color: dodgerblue;
+}
+
+.mainTaskbar__list .poweroff {
+  display: none;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .mainTaskbar__list .poweroff {
+    display: initial;
+  }
+}
+
+.mainTaskbar__list .compress {
+  display: none;
+}
+
+.mainTaskbar__list .github {
+  color: #446cb3;
+}
+
+.mainTaskbar__list .linkedin {
+  color: #0077b5;
+}
+
+.mainTaskbar__list .codepen {
+  color: #787878;
+}
+
+.mainTaskbar__list .paint {
+  color: #e67e22;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .mainTaskbar__list .paint {
+    display: none;
+  }
+}
+
+.timedate {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 11;
+  grid-column: 2/13;
+  display: none;
+  list-style-type: none;
+  color: white;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  text-align: center;
+}
+
+.timedate :hover {
+  background-color: #282828;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .timedate {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    height: 4.15rem;
+    width: 100vw;
+  }
+}
+
+.timedate__list {
+  padding: 0.45rem 1.5rem;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.timedate .time {
+  font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .timedate .time {
+    font-size: 1.4rem;
+    padding-top: 1rem;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .timedate #date {
+    display: none;
+  }
+}
+
+.timedate .icon {
+  font-size: 2rem;
+}
+
+.bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .bottom {
+    display: none;
+  }
+}
+
+.top {
+  display: -ms-grid;
+  display: grid;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .top {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-column: 1/13;
+  }
+}
+
+.center {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+}
+
+.right {
+  -ms-grid-column-align: end;
+      justify-self: end;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+}
+
+.startMenu {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  bottom: 4.2rem;
+  height: 50rem;
+  width: 32rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .startMenu {
+    display: none;
+  }
+}
+
+.startMenu__power {
+  height: 100%;
+  width: 4.7rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+}
+
+.startMenu .power {
+  font-size: 2rem;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  padding: 1.2rem 1.38rem;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  color: white;
+}
+
+.startMenu .power:hover {
+  background-color: #282828;
+}
+
+#notification {
+  font-size: 1.2rem;
+  color: red;
+  font-weight: bold;
+  position: absolute;
+  right: 2.2rem;
+  bottom: 1.65rem;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+          animation: glow 1s ease-in-out infinite alternate;
+}
+
+@media only screen and (max-width: 37.5em) {
+  #notification {
+    top: .85rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */
