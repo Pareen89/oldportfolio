@@ -349,6 +349,7 @@ body {
   right: 2.15rem;
   bottom: 1.65rem;
   animation: glow 1s ease-in-out infinite alternate;
+  cursor: context-menu;
 
   @include respond(phone) {
     top: 0.85rem;
@@ -375,4 +376,31 @@ body {
   display: initial;
   right: 0;
   transition: 0.2s ease-in-out;
+}
+//****************************//
+//          Folders           //
+//****************************//
+.folders {
+  &__list {
+    list-style-type: none;
+    text-align: center;
+    padding: 1rem 1rem;
+    &-items {
+      margin-bottom: 3rem;
+      width: 6rem;
+      height: 6.5rem;
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.6);
+      }
+      &-folder {
+        font-size: 4rem;
+        color: white;
+      }
+      &-title {
+        font-size: 1.3rem;
+        color: white;
+        cursor: context-menu;
+      }
+    }
+  }
 }

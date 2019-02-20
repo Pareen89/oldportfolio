@@ -345,6 +345,7 @@ body {
   bottom: 1.65rem;
   -webkit-animation: glow 1s ease-in-out infinite alternate;
           animation: glow 1s ease-in-out infinite alternate;
+  cursor: context-menu;
 }
 
 @media only screen and (max-width: 37.5em) {
@@ -376,5 +377,32 @@ body {
   right: 0;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
+}
+
+.folders__list {
+  list-style-type: none;
+  text-align: center;
+  padding: 1rem 1rem;
+}
+
+.folders__list-items {
+  margin-bottom: 3rem;
+  width: 6rem;
+  height: 6.5rem;
+}
+
+.folders__list-items:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.folders__list-items-folder {
+  font-size: 4rem;
+  color: white;
+}
+
+.folders__list-items-title {
+  font-size: 1.3rem;
+  color: white;
+  cursor: context-menu;
 }
 /*# sourceMappingURL=style.css.map */

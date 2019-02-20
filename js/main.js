@@ -37,7 +37,7 @@ about.addEventListener("click", function () {
 //////full screen and exit full screen//////
 ///////////////////////////////////////////
 full.addEventListener('click', fullScreen);
-
+// to make website fullscreen 
 function fullScreen() {
     if (element.requestFullscreen) {
         element.requestFullscreen();
@@ -52,7 +52,7 @@ function fullScreen() {
         element.msRequestFullscreen();
     }
 }
-
+// to exit fullscreen
 function closeScreen() {
     if (document.exitFullscreen) {
         document.exitFullscreen();
@@ -75,6 +75,7 @@ function timeAndDate() {
     let month = now.getMonth() + 1;
     let day = now.getDate();
     let year = now.getFullYear();
+    // time and date format(time= hh:mm and date = mm/dd/yyyy )
     if (min < 10) {
         min = `0${min}`;
     }
@@ -88,6 +89,7 @@ function timeAndDate() {
     }
 
     let date = `${month}/${day}/${year}`;
+    // assigning time and date to website
     document.getElementById("time").innerHTML = time;
     document.getElementById("date").innerHTML = date;
     document.getElementById("time1").innerHTML = time;
