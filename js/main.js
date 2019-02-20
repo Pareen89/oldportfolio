@@ -8,16 +8,31 @@ let compress = document.getElementById('compress');
 let icon = document.getElementById('icon');
 let notification = document.getElementById('notification');
 let about = document.getElementById('about');
+let startMenu = document.getElementById('startMenu');
+let windows = document.getElementById('windows');
+let aboutme = document.getElementById('aboutme');
+
+/////////////////////////////////////////////
+//////////////////Start Menu ///////////////
+///////////////////////////////////////////
+windows.addEventListener('click', function () {
+    console.log('click');
+    startMenu.classList.toggle('startMenu-toggle');
+})
+
 
 /////////////////////////////////////////////
 //////////////Notification Click ///////////
 ///////////////////////////////////////////
 icon.addEventListener('click', function () {
     notification.innerHTML = '';
+    aboutme.classList.toggle('aboutme-toggle');
 })
 about.addEventListener("click", function () {
     notification.innerHTML = '';
+    aboutme.classList.toggle('aboutme-toggle');
 })
+
 /////////////////////////////////////////////
 //////full screen and exit full screen//////
 ///////////////////////////////////////////

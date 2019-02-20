@@ -16,334 +16,363 @@ $breakpoint:
 */
 // 1em = 16px
 @mixin respond($breakpoint) {
-    @if $breakpoint==phone {
-        @media only screen and (max-width: 37.5em) {
-            @content;
-        }
-
-        //600px
+  @if $breakpoint==phone {
+    @media only screen and (max-width: 37.5em) {
+      @content;
     }
 
-    @if $breakpoint==tab-port {
-        @media only screen and (max-width: 56.25em) {
-            @content;
-        }
+    //600px
+  }
 
-        // 900px
+  @if $breakpoint==tab-port {
+    @media only screen and (max-width: 56.25em) {
+      @content;
     }
 
-    @if $breakpoint==tab-land {
-        @media only screen and (max-width: 75em) {
-            @content;
-        }
+    // 900px
+  }
 
-        //1200px
+  @if $breakpoint==tab-land {
+    @media only screen and (max-width: 75em) {
+      @content;
     }
 
-    @if $breakpoint==sm {
-        @media only screen and (max-width: 85.375em) {
-            @content;
-        }
+    //1200px
+  }
 
-        //1350px
+  @if $breakpoint==sm {
+    @media only screen and (max-width: 85.375em) {
+      @content;
     }
+
+    //1350px
+  }
 }
 
 //****************************//
 //           Mixin            //
 //****************************//
 @mixin position($x-position, $y-position) {
-    position: absolute;
-    top: $x-position;
-    left: $y-position;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: $x-position;
+  left: $y-position;
+  transform: translate(-50%, -50%);
 }
 
 //****************************//
 //            Root            //
 //****************************//
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 html {
-    // defines what 1rem is
-    font-size: 62.5%; // 1rem =10px; 10px/16px = 62.5%
+  // defines what 1rem is
+  font-size: 62.5%; // 1rem =10px; 10px/16px = 62.5%
 
-    //   @include respond(tab-land) {
-    //     font-size: 56.25%; // 1rem = 9px 9/16= 56.25%
-    //   }
+  //   @include respond(tab-land) {
+  //     font-size: 56.25%; // 1rem = 9px 9/16= 56.25%
+  //   }
 
-    //   @include respond(tab-port) {
-    //     font-size: 50%; // 1rem = 8px. 8/16 = 50%
-    //   }
+  //   @include respond(tab-port) {
+  //     font-size: 50%; // 1rem = 8px. 8/16 = 50%
+  //   }
 
-    // @include respond(phone) {
-    //     font-size: 55%;
-    // }
+  // @include respond(phone) {
+  //     font-size: 55%;
+  // }
 }
 
 body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 //****************************//
 //         Keyframes          //
 //****************************//
 @keyframes glow {
-    from {
-        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff;
-    }
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff,
+      0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff;
+  }
 
-    to {
-        text-shadow: 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff, 0 0 80px #fff, 0 0 90px #fff, 0 0 100px #fff;
-    }
+  to {
+    text-shadow: 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff,
+      0 0 80px #fff, 0 0 90px #fff, 0 0 100px #fff;
+  }
 }
 
 //****************************//
 //        Background          //
 //****************************//
 .background {
-    background-image: url("img/bg.jpg");
-    height: 100vh;
-    width: 100vw;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: url("img/bg.jpg");
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .container {
-    // display: grid;
-    // grid-template-columns: repeat(12, 1fr);
-    // grid-template-rows: 4.15rem repeat(10, 1fr) 4.15rem;
+  // display: grid;
+  // grid-template-columns: repeat(12, 1fr);
+  // grid-template-rows: 4.15rem repeat(10, 1fr) 4.15rem;
 }
 
 //****************************//
 //          Taskbar           //
 //****************************//
 .topTaskbar {
-    display: none;
+  display: none;
 
-    @include respond(phone) {
-        display: grid;
-        grid-row: 1/2;
-    }
+  @include respond(phone) {
+    display: grid;
+    grid-row: 1/2;
+  }
 }
 
 .topTaskbar,
 .mainTaskbar {
-    height: 4.15rem;
-    width: 100vw;
-    background-color: rgba(12, 12, 12, 0.7);
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 1fr;
-    overflow: hidden;
+  height: 4.15rem;
+  width: 100vw;
+  background-color: rgba(12, 12, 12, 0.7);
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  overflow: hidden;
 
-    @include respond(phone) {
-        grid-template-columns: 1fr;
-    }
+  @include respond(phone) {
+    grid-template-columns: 1fr;
+  }
 }
 
 // main taskbar
 .mainTaskbar {
-    grid-row: 12/13;
-    grid-column: 1/13;
-    display: grid;
-    align-self: end;
-    position: absolute;
-    bottom: 0;
+  grid-row: 12/13;
+  grid-column: 1/13;
+  display: grid;
+  align-self: end;
+  position: absolute;
+  bottom: 0;
 
-    &__list {
-        display: flex;
-        list-style-type: none;
-        align-self: center;
+  &__list {
+    display: flex;
+    list-style-type: none;
+    align-self: center;
 
-        @include respond(phone) {
-            justify-content: space-between;
-        }
-
-        :hover {
-            background-color: rgb(40, 40, 40);
-        }
-
-        &-icons {
-            color: white;
-            font-size: 2rem;
-            padding: 0.75rem 1.5rem;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .windows {
-            @include respond(phone) {
-                display: none;
-            }
-        }
-
-        .windows:hover {
-            color: rgb(30, 144, 255);
-        }
-
-        .poweroff {
-            display: none;
-
-            @include respond(phone) {
-                display: initial;
-            }
-        }
-
-        .compress {
-            display: none;
-        }
-
-        .github {
-            color: rgba(68, 108, 179, 1);
-        }
-
-        .linkedin {
-            color: rgb(0, 119, 181);
-        }
-
-        .codepen {
-            color: rgb(120, 120, 120);
-        }
-
-        .paint {
-            color: rgba(230, 126, 34, 1);
-
-            @include respond(phone) {
-                display: none;
-            }
-        }
+    @include respond(phone) {
+      justify-content: space-between;
     }
+
+    :hover {
+      background-color: rgb(40, 40, 40);
+    }
+
+    &-icons {
+      color: white;
+      font-size: 2rem;
+      padding: 0.75rem 1.5rem;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .windows {
+      @include respond(phone) {
+        display: none;
+      }
+    }
+
+    .windows:hover {
+      color: rgb(30, 144, 255);
+    }
+
+    .poweroff {
+      display: none;
+
+      @include respond(phone) {
+        display: initial;
+      }
+    }
+
+    .compress {
+      display: none;
+    }
+
+    .github {
+      color: rgba(68, 108, 179, 1);
+    }
+
+    .linkedin {
+      color: rgb(0, 119, 181);
+    }
+
+    .codepen {
+      color: rgb(120, 120, 120);
+    }
+
+    .paint {
+      color: rgba(230, 126, 34, 1);
+
+      @include respond(phone) {
+        display: none;
+      }
+    }
+  }
 }
 
 // Time, date, about
 .timedate {
-    grid-column: 2/13;
-    display: none;
-    list-style-type: none;
-    color: white;
-    align-self: center;
-    justify-self: end;
-    text-align: center;
+  grid-column: 2/13;
+  display: none;
+  list-style-type: none;
+  color: white;
+  align-self: center;
+  justify-self: end;
+  text-align: center;
 
-    :hover {
-        background-color: rgb(40, 40, 40);
-    }
+  :hover {
+    background-color: rgb(40, 40, 40);
+  }
+
+  @include respond(phone) {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 4.15rem;
+    width: 100vw;
+  }
+
+  &__list {
+    padding: 0.45rem 1.5rem;
+    transition: all 0.3s ease-in-out;
+    user-select: none;
+  }
+
+  .time {
+    font-size: 1.2rem;
 
     @include respond(phone) {
-        display: grid;
-        grid-template-rows: 1fr;
-        grid-template-columns: 1fr;
-        height: 4.15rem;
-        width: 100vw;
+      font-size: 1.4rem;
+      padding-top: 1rem;
     }
+  }
 
-    &__list {
-        padding: 0.45rem 1.5rem;
-        transition: all 0.3s ease-in-out;
-        user-select: none;
+  #date {
+    @include respond(phone) {
+      display: none;
     }
+  }
 
-    .time {
-        font-size: 1.2rem;
-
-        @include respond(phone) {
-            font-size: 1.4rem;
-            padding-top: 1rem;
-        }
-    }
-
-    #date {
-        @include respond(phone) {
-            display: none;
-        }
-    }
-
-    .icon {
-        font-size: 2rem;
-    }
+  .icon {
+    font-size: 2rem;
+  }
 }
 
 .bottom {
-    display: flex;
+  display: flex;
 
-    @include respond(phone) {
-        display: none;
-    }
+  @include respond(phone) {
+    display: none;
+  }
 }
 
 .top {
-    display: grid;
+  display: grid;
 
-    @include respond(phone) {
-        grid-column: 1/13;
-    }
+  @include respond(phone) {
+    grid-column: 1/13;
+  }
 }
 
 .center {
-    justify-self: center;
-    grid-row: 1/2;
-    grid-column: 1/2;
+  justify-self: center;
+  grid-row: 1/2;
+  grid-column: 1/2;
 }
 
 .right {
-    justify-self: end;
-    grid-row: 1/2;
-    grid-column: 1/2;
+  justify-self: end;
+  grid-row: 1/2;
+  grid-column: 1/2;
 }
 
 //****************************//
 //        Start Menu          //
 //****************************//
 .startMenu {
-    background-color: rgba(0, 0, 0, 0.6);
-    position: absolute;
-    bottom: 4.2rem;
-    height: 50rem;
-    width: 32rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  bottom: -46rem;
+  height: 50rem;
+  width: 32rem;
+  display: none;
+  z-index: 999;
 
-    @include respond(phone) {
-        display: none;
+  @include respond(phone) {
+    display: none;
+  }
+
+  &__power {
+    height: 100%;
+    width: 4.7rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .power {
+    font-size: 2rem;
+    justify-self: center;
+    align-self: end;
+    padding: 1.2rem 1.38rem;
+    transition: all 0.3s ease-in-out;
+    color: white;
+
+    &:hover {
+      background-color: rgb(40, 40, 40);
     }
+  }
+}
 
-    &__power {
-        height: 100%;
-        width: 4.7rem;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
-
-    }
-
-    .power {
-        font-size: 2rem;
-        justify-self: center;
-        align-self: end;
-        padding: 1.2rem 1.38rem;
-        transition: all 0.3s ease-in-out;
-        color: white;
-
-        &:hover {
-            background-color: rgb(40, 40, 40);
-
-        }
-    }
+.startMenu-toggle {
+  bottom: 4.2rem;
+  display: initial;
 }
 
 // Notification number
 #notification {
-    font-size: 1.2rem;
-    color: red;
-    font-weight: bold;
-    position: absolute;
-    right: 2.2rem;
-    bottom: 1.65rem;
-    animation: glow 1s ease-in-out infinite alternate;
+  font-size: 1.2rem;
+  color: red;
+  font-weight: bold;
+  position: absolute;
+  right: 2.15rem;
+  bottom: 1.65rem;
+  animation: glow 1s ease-in-out infinite alternate;
 
-    @include respond(phone) {
-        top: .85rem;
-    }
+  @include respond(phone) {
+    top: 0.85rem;
+  }
+}
+
+//****************************//
+//            About           //
+//****************************//
+.aboutme {
+  width: 38rem;
+  height: calc(100vh - 4.15rem);
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  right: -39.5rem;
+  display: none;
+  transition: 0.2s ease-in-out;
+  @include respond(phone) {
+    height: calc(100vh - 8.3rem);
+    width: 100vw;
+  }
+}
+.aboutme-toggle {
+  display: initial;
+  right: 0;
+  transition: 0.2s ease-in-out;
 }
