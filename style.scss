@@ -90,6 +90,19 @@ body {
 }
 
 //****************************//
+//         Keyframes          //
+//****************************//
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff;
+    }
+
+    to {
+        text-shadow: 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff, 0 0 80px #fff, 0 0 90px #fff, 0 0 100px #fff;
+    }
+}
+
+//****************************//
 //        Background          //
 //****************************//
 .background {
@@ -231,6 +244,7 @@ body {
     &__list {
         padding: 0.45rem 1.5rem;
         transition: all 0.3s ease-in-out;
+        user-select: none;
     }
 
     .time {
@@ -320,13 +334,14 @@ body {
 }
 
 // Notification number
-.notification {
+#notification {
     font-size: 1.2rem;
     color: red;
     font-weight: bold;
     position: absolute;
     right: 2.2rem;
     bottom: 1.65rem;
+    animation: glow 1s ease-in-out infinite alternate;
 
     @include respond(phone) {
         top: .85rem;

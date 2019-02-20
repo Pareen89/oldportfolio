@@ -1,10 +1,26 @@
 /////////////////////////////////////////////
-//////full screen and exit full screen//////
+///////////////Variables////////////////////
 ///////////////////////////////////////////
 let element = document.documentElement;
 let full = document.getElementById('full');
 let arrow = document.getElementById('arrow');
 let compress = document.getElementById('compress');
+let icon = document.getElementById('icon');
+let notification = document.getElementById('notification');
+let about = document.getElementById('about');
+
+/////////////////////////////////////////////
+//////////////Notification Click ///////////
+///////////////////////////////////////////
+icon.addEventListener('click', function () {
+    notification.innerHTML = '';
+})
+about.addEventListener("click", function () {
+    notification.innerHTML = '';
+})
+/////////////////////////////////////////////
+//////full screen and exit full screen//////
+///////////////////////////////////////////
 full.addEventListener('click', fullScreen);
 
 function fullScreen() {
