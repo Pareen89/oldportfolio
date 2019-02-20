@@ -15,7 +15,7 @@ $breakpoint:
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -55,17 +55,18 @@ body {
   width: 100vw;
   background-color: rgba(12, 12, 12, 0.7);
   -ms-grid-columns: (1fr)[12];
-      grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   -ms-grid-rows: 1fr;
-      grid-template-rows: 1fr;
+  grid-template-rows: 1fr;
   overflow: hidden;
 }
 
 @media only screen and (max-width: 37.5em) {
+
   .topTaskbar,
   .mainTaskbar {
     -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 }
 
@@ -79,7 +80,7 @@ body {
   display: -ms-grid;
   display: grid;
   -ms-grid-row-align: end;
-      align-self: end;
+  align-self: end;
   position: absolute;
   bottom: 0;
 }
@@ -90,14 +91,14 @@ body {
   display: flex;
   list-style-type: none;
   -ms-flex-item-align: center;
-      align-self: center;
+  align-self: center;
 }
 
 @media only screen and (max-width: 37.5em) {
   .mainTaskbar__list {
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
   }
 }
 
@@ -167,10 +168,10 @@ body {
   list-style-type: none;
   color: white;
   -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -ms-grid-row-align: center;
+  align-self: center;
   -ms-grid-column-align: end;
-      justify-self: end;
+  justify-self: end;
   text-align: center;
 }
 
@@ -183,9 +184,9 @@ body {
     display: -ms-grid;
     display: grid;
     -ms-grid-rows: 1fr;
-        grid-template-rows: 1fr;
+    grid-template-rows: 1fr;
     -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
     height: 4.15rem;
     width: 100vw;
   }
@@ -245,7 +246,7 @@ body {
 
 .center {
   -ms-grid-column-align: center;
-      justify-self: center;
+  justify-self: center;
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1/2;
@@ -256,7 +257,7 @@ body {
 
 .right {
   -ms-grid-column-align: end;
-      justify-self: end;
+  justify-self: end;
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1/2;
@@ -275,8 +276,7 @@ body {
 
 @media only screen and (max-width: 37.5em) {
   .startMenu {
-    width: 100%;
-    height: calc(100vh - 8.4rem);
+    display: none;
   }
 }
 
@@ -286,31 +286,41 @@ body {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
+  grid-template-columns: 1fr;
   -ms-grid-rows: 1fr;
-      grid-template-rows: 1fr;
+  grid-template-rows: 1fr;
 }
 
 .startMenu .power {
   font-size: 2rem;
   -ms-grid-column-align: center;
-      justify-self: center;
+  justify-self: center;
   -ms-flex-item-align: end;
-      -ms-grid-row-align: end;
-      align-self: end;
+  -ms-grid-row-align: end;
+  align-self: end;
   padding: 1.2rem 1.38rem;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   color: white;
 }
 
-@media only screen and (max-width: 37.5em) {
-  .startMenu .power {
-    display: none;
-  }
-}
-
 .startMenu .power:hover {
   background-color: #282828;
 }
+
+.notification {
+  font-size: 1.2rem;
+  color: rgba(255, 0, 0, 0.7);
+  font-weight: bold;
+  position: absolute;
+  right: 2.2rem;
+  bottom: 1.65rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .notification {
+    top: .85rem;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

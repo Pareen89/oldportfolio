@@ -292,8 +292,7 @@ body {
     width: 32rem;
 
     @include respond(phone) {
-        width: 100%;
-        height: calc(100vh - 8.4rem);
+        display: none;
     }
 
     &__power {
@@ -313,13 +312,23 @@ body {
         transition: all 0.3s ease-in-out;
         color: white;
 
-        @include respond(phone) {
-            display: none;
-        }
-
         &:hover {
             background-color: rgb(40, 40, 40);
 
         }
+    }
+}
+
+// Notification number
+.notification {
+    font-size: 1.2rem;
+    color: red;
+    font-weight: bold;
+    position: absolute;
+    right: 2.2rem;
+    bottom: 1.65rem;
+
+    @include respond(phone) {
+        top: .85rem;
     }
 }
