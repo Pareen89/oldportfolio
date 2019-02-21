@@ -337,20 +337,34 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-  }
 
-  .power {
-    font-size: 2rem;
-    justify-self: center;
-    align-self: end;
-    padding: 1.2rem 1.38rem;
-    transition: all 0.3s ease-in-out;
-    color: white;
+    .power {
+      font-size: 2rem;
+      justify-self: center;
+      align-self: end;
+      padding: 1.2rem 1.38rem;
+      transition: all 0.3s ease-in-out;
+      color: white;
 
-    &:hover {
-      background-color: rgb(40, 40, 40);
+      &:hover {
+        background-color: rgb(40, 40, 40);
+      }
     }
   }
+
+  &__programs {
+    height: 50rem;
+    width: 27.21rem;
+    position: absolute;
+    padding-left: 1.5rem;
+    top: 0;
+    right: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(12, 1fr);
+  }
+
+
 }
 
 .startMenu-toggle {
@@ -450,17 +464,13 @@ body {
   }
 }
 
+
 .clicked {
   display: none;
-  background-color: rgb(80, 80, 80);
   border-bottom: .3rem solid rgb(105, 105, 255);
 
   @include respond(phone) {
     display: none !important;
-  }
-
-  &:hover {
-    background-color: rgb(100, 100, 100);
   }
 }
 
@@ -470,6 +480,7 @@ body {
 
 .folder {
   color: rgb(255, 208, 151);
+
 }
 
 

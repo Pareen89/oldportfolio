@@ -18,7 +18,7 @@ let place = document.getElementById("place");
 let projects = document.getElementById("projects");
 let clickedFile = document.getElementById("clickedFile");
 let clickedFolder = document.getElementById("clickedFolder");
-
+let minProjectFolder = document.getElementById("minProjectFolder");
 /////////////////////////////////////////////
 //////////////////Start Menu ///////////////
 ///////////////////////////////////////////
@@ -122,14 +122,30 @@ window.addEventListener("mouseup", function(event) {
 });
 
 /////////////////////////////////////////////
-////////////////Open Folders////////////////
+/////////////Folder Functions///////////////
 ///////////////////////////////////////////
+
+// Project Folder
 projectsFolder.addEventListener("dblclick", function() {
   projects.style.display = "inherit";
   clickedFolder.style.display = "inherit";
+  clickedFolder.style.background = "rgb(80, 80, 80)";
 });
 
 closeProjectFolder.addEventListener("click", function() {
   projects.style.display = "none";
   clickedFolder.style.display = "none";
+});
+minProjectFolder.addEventListener("click", function() {
+  projects.style.display = "none";
+  clickedFolder.style.backgroundColor = "transparent";
+});
+clickedFolder.addEventListener("click", function() {
+  if (projects.style.display == "none") {
+    projects.style.display = "inherit";
+    clickedFolder.style.backgroundColor = "rgb(80, 80, 80)";
+  } else {
+    projects.style.display = "none";
+    clickedFolder.style.backgroundColor = "transparent";
+  }
 });

@@ -338,7 +338,7 @@ body {
       grid-template-rows: 1fr;
 }
 
-.startMenu .power {
+.startMenu__power .power {
   font-size: 2rem;
   -ms-grid-column-align: center;
       justify-self: center;
@@ -351,8 +351,23 @@ body {
   color: white;
 }
 
-.startMenu .power:hover {
+.startMenu__power .power:hover {
   background-color: #282828;
+}
+
+.startMenu__programs {
+  height: 50rem;
+  width: 27.21rem;
+  position: absolute;
+  padding-left: 1.5rem;
+  top: 0;
+  right: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: (1fr)[12];
+      grid-template-rows: repeat(12, 1fr);
 }
 
 .startMenu-toggle {
@@ -457,7 +472,6 @@ body {
 
 .clicked {
   display: none;
-  background-color: #505050;
   border-bottom: 0.3rem solid #6969ff;
 }
 
@@ -465,10 +479,6 @@ body {
   .clicked {
     display: none !important;
   }
-}
-
-.clicked:hover {
-  background-color: #646464;
 }
 
 .file {
