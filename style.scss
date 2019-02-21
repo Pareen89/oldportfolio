@@ -326,6 +326,7 @@ body {
   width: 32rem;
   display: none;
   z-index: 999;
+  transition: all 0.2s ease-in-out;
 
   @include respond(phone) {
     display: none;
@@ -359,9 +360,59 @@ body {
     padding-left: 1.5rem;
     top: 0;
     right: 0;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(12, 1fr);
+    overflow: hidden;
+    color: white;
+  }
+
+  .scroll {
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      overflow-y: scroll;
+      overflow-x: hidden;
+
+      &::-webkit-scrollbar {
+        width: 2px;
+        height: 2px;
+      }
+
+      &::-webkit-scrollbar-button {
+        width: 0px;
+        height: 0px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #e1e1e1;
+        border: 0px none #ffffff;
+        border-radius: 50px;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background: #ffffff;
+      }
+
+      &::-webkit-scrollbar-thumb:active {
+        background: #000000;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: transparent;
+        border: 0px none #ffffff;
+        border-radius: 5px;
+      }
+
+      &::-webkit-scrollbar-track:hover {
+        background: transparent;
+      }
+
+      &::-webkit-scrollbar-track:active {
+        background: transparent;
+      }
+
+      &::-webkit-scrollbar-corner {
+        background: transparent;
+      }
+    }
   }
 
 

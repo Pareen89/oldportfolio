@@ -319,6 +319,8 @@ body {
   width: 32rem;
   display: none;
   z-index: 999;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 @media only screen and (max-width: 37.5em) {
@@ -362,12 +364,60 @@ body {
   padding-left: 1.5rem;
   top: 0;
   right: 0;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  -ms-grid-rows: (1fr)[12];
-      grid-template-rows: repeat(12, 1fr);
+  overflow: hidden;
+  color: white;
+}
+
+.startMenu .scroll {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.startMenu .scroll:hover {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.startMenu .scroll:hover::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+.startMenu .scroll:hover::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+
+.startMenu .scroll:hover::-webkit-scrollbar-thumb {
+  background: #e1e1e1;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+
+.startMenu .scroll:hover::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+
+.startMenu .scroll:hover::-webkit-scrollbar-thumb:active {
+  background: #000000;
+}
+
+.startMenu .scroll:hover::-webkit-scrollbar-track {
+  background: transparent;
+  border: 0px none #ffffff;
+  border-radius: 5px;
+}
+
+.startMenu .scroll:hover::-webkit-scrollbar-track:hover {
+  background: transparent;
+}
+
+.startMenu .scroll:hover::-webkit-scrollbar-track:active {
+  background: transparent;
+}
+
+.startMenu .scroll:hover::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 .startMenu-toggle {
