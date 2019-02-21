@@ -159,28 +159,28 @@ body {
   }
 }
 
-.mainTaskbar__list .compress {
+.compress {
   display: none;
 }
 
-.mainTaskbar__list .github {
+.github {
   color: #446cb3;
 }
 
-.mainTaskbar__list .linkedin {
+.linkedin {
   color: #0077b5;
 }
 
-.mainTaskbar__list .codepen {
+.codepen {
   color: #787878;
 }
 
-.mainTaskbar__list .paint {
+.paint {
   color: #e67e22;
 }
 
 @media only screen and (max-width: 37.5em) {
-  .mainTaskbar__list .paint {
+  .paint {
     display: none;
   }
 }
@@ -365,7 +365,78 @@ body {
   top: 0;
   right: 0;
   overflow: hidden;
+  color: #f4f4f4;
+}
+
+.startMenu__programs-list {
+  list-style-type: none;
+  font-size: 1.3rem;
+}
+
+.startMenu__programs-list-items {
+  height: 3.5rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3.5rem 20rem;
+      grid-template-columns: 3.5rem 20rem;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.startMenu__programs-list-items:hover {
+  background-color: #282828;
+}
+
+.startMenu__programs-list-items-icon {
+  font-size: 2rem;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  height: 3rem;
+  width: 3rem;
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
+  background-color: dodgerblue;
+}
+
+.startMenu__programs-list-items-title {
   color: white;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: start;
+      justify-self: start;
+  padding-left: 1rem;
+}
+
+.startMenu__title {
+  padding-top: 0.5rem;
+  height: 3.5rem;
+  width: 100%;
+  line-height: 3rem;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  padding-left: 0.3rem;
+}
+
+.startMenu__title:hover {
+  background-color: #282828;
 }
 
 .startMenu .scroll {
