@@ -409,8 +409,12 @@ body {
 //****************************//
 .projects {
   height: calc(100vh - 4.15rem);
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
   width: 100vw;
+  z-index: 900;
+}
+#projects {
+  display: none;
 }
 //****************************//
 //            Top Bar         //
@@ -418,7 +422,7 @@ body {
 .topbar {
   height: 3rem;
   width: 100%;
-  background-color: rgba(250, 250, 250, 0.9);
+  background-color: rgba(250, 250, 250, 0.7);
   display: flex;
   align-items: center;
   &-icons {
@@ -426,7 +430,7 @@ body {
     right: 0;
     &-details {
       font-size: 1.4rem;
-      padding: 0.85rem 1.5rem;
+      padding: 0.85rem 1.8rem;
       color: rgb(65, 64, 64);
     }
     &-minus,
@@ -452,4 +456,8 @@ body {
     cursor: context-menu;
     user-select: none;
   }
+}
+#place {
+  position: absolute;
+  top: 0;
 }

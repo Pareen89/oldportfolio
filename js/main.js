@@ -13,7 +13,9 @@ let windows = document.getElementById('windows');
 let aboutme = document.getElementById('aboutme');
 let resumeFile = document.getElementById('resumeFile');
 let projectsFolder = document.getElementById('projectsFolder');
-
+let closeProjectFolder = document.getElementById('closeProjectFolder');
+let place = document.getElementById('place');
+let projects = document.getElementById('projects');
 
 /////////////////////////////////////////////
 //////////////////Start Menu ///////////////
@@ -117,4 +119,15 @@ window.addEventListener('mouseup', function (event) {
     if (event.target !== projectsFolder) {
         projectsFolder.style.backgroundColor = "transparent";
     }
+})
+
+/////////////////////////////////////////////
+////////////////Open Folders////////////////
+///////////////////////////////////////////
+projectsFolder.addEventListener('dblclick', function () {
+    projects.style.display = "inherit";
+});
+
+closeProjectFolder.addEventListener('click', function () {
+    projects.style.display = "none";
 })
