@@ -108,7 +108,6 @@ resumeFile.addEventListener('click', function () {
 projectsFolder.addEventListener('click', function () {
     projectsFolder.style.backgroundColor = "rgba(255, 255, 255, 0.6)";
 })
-
 window.addEventListener('mouseup', function (event) {
     if (event.target !== resumeFile) {
         resumeFile.style.backgroundColor = "transparent";
