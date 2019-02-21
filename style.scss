@@ -66,6 +66,8 @@ $breakpoint:
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+
+
 }
 
 html {
@@ -83,6 +85,7 @@ html {
   // @include respond(phone) {
   //     font-size: 55%;
   // }
+
 }
 
 body {
@@ -133,7 +136,7 @@ body {
 .mainTaskbar {
   height: 4.15rem;
   width: 100vw;
-  background-color: rgba(12, 12, 12, 0.7);
+  background-color: rgba(12, 12, 12, 0.8);
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 1fr;
   overflow: hidden;
@@ -158,11 +161,8 @@ body {
     align-self: center;
 
     @include respond(phone) {
+      padding: 0 1rem;
       justify-content: space-between;
-    }
-
-    :hover {
-      background-color: rgb(40, 40, 40);
     }
 
     &-icons {
@@ -170,6 +170,14 @@ body {
       font-size: 2rem;
       padding: 0.75rem 1.5rem;
       transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-color: rgb(40, 40, 40);
+
+        @include respond(phone) {
+          background-color: transparent;
+        }
+      }
     }
 
     .windows {
@@ -226,9 +234,7 @@ body {
   justify-self: end;
   text-align: center;
 
-  :hover {
-    background-color: rgb(40, 40, 40);
-  }
+
 
   @include respond(phone) {
     display: grid;
@@ -247,6 +253,14 @@ body {
   .time {
     font-size: 1.2rem;
 
+    &:hover {
+      background-color: rgb(40, 40, 40);
+
+      @include respond(phone) {
+        background-color: transparent;
+      }
+    }
+
     @include respond(phone) {
       font-size: 1.4rem;
       padding-top: 1rem;
@@ -261,6 +275,15 @@ body {
 
   .icon {
     font-size: 2rem;
+
+    &:hover {
+      background-color: rgb(40, 40, 40);
+
+      @include respond(phone) {
+        background-color: transparent;
+      }
+    }
+
   }
 }
 
@@ -361,78 +384,135 @@ body {
   position: absolute;
   right: -39.5rem;
   display: none;
+
   @include respond(phone) {
     height: calc(100vh - 8.3rem);
     width: 100vw;
   }
 }
+
 .aboutme-toggle {
   display: initial;
   right: 0;
 }
+
 //****************************//
 //          Folders           //
 //****************************//
 .folders {
+
+
   &__list {
     list-style-type: none;
     text-align: center;
     padding: 1rem 1rem;
     z-index: 2;
+
     &-items {
       margin-bottom: 3rem;
       width: 6rem;
       height: 6.5rem;
-      .file {
-        color: rgb(236, 227, 227);
+
+      @include respond(phone) {
+        border-radius: 1rem;
+        background-color: rgba(255, 255, 255, 0.6) !important;
+        width: 5rem;
+        height: 5rem;
+        padding: 1rem 0.5rem;
+        margin: 0rem 1rem 5rem 0rem;
       }
-      .folder {
-        color: rgb(255, 208, 151);
-      }
+
       &:hover {
         background-color: rgba(255, 255, 255, 0.6);
       }
+
       &-folder {
         font-size: 4rem;
+
+        @include respond(phone) {
+          font-size: 3rem;
+        }
       }
+
       &-title {
         font-size: 1.3rem;
         color: white;
         cursor: context-menu;
         user-select: none;
+
+        @include respond(phone) {
+          padding-top: 1.2rem;
+          margin-left: -0.2rem;
+          font-size: 1.2rem;
+        }
       }
     }
   }
 }
+
+.clicked {
+  display: none;
+  background-color: rgb(80, 80, 80);
+  border-bottom: .3rem solid rgb(105, 105, 255);
+
+  @include respond(phone) {
+    display: none !important;
+  }
+
+  &:hover {
+    background-color: rgb(100, 100, 100);
+  }
+}
+
+.file {
+  color: rgb(236, 227, 227);
+}
+
+.folder {
+  color: rgb(255, 208, 151);
+}
+
+
 //****************************//
 //        Project Folders     //
 //****************************//
 .projects {
   height: calc(100vh - 4.15rem);
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(12, 12, 12, 0.7);
   width: 100vw;
   z-index: 900;
+
+  @include respond(phone) {
+    height: 100vh;
+    background-color: rgba(12, 12, 12, 1);
+  }
 }
+
 #projects {
   display: none;
 }
+
 //****************************//
 //            Top Bar         //
 //****************************//
 .topbar {
   height: 3rem;
   width: 100%;
-  background-color: rgba(250, 250, 250, 0.7);
+  background-color: rgba(204, 204, 204, 0.9);
   display: flex;
   align-items: center;
+  border-bottom: .1rem solid gba(250, 250, 250);
+
   &-icons {
     position: absolute;
     right: 0;
+
     &-details {
       font-size: 1.4rem;
       padding: 0.85rem 1.8rem;
       color: rgb(65, 64, 64);
     }
+
     &-minus,
     &-square {
       &:hover {
@@ -440,6 +520,7 @@ body {
         background-color: rgba(120, 120, 120, 0.5);
       }
     }
+
     &-close {
       &:hover {
         color: white;
@@ -457,6 +538,7 @@ body {
     user-select: none;
   }
 }
+
 #place {
   position: absolute;
   top: 0;

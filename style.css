@@ -72,7 +72,7 @@ body {
 .mainTaskbar {
   height: 4.15rem;
   width: 100vw;
-  background-color: rgba(12, 12, 12, 0.7);
+  background-color: rgba(12, 12, 12, 0.8);
   -ms-grid-columns: (1fr)[12];
       grid-template-columns: repeat(12, 1fr);
   -ms-grid-rows: 1fr;
@@ -114,14 +114,11 @@ body {
 
 @media only screen and (max-width: 37.5em) {
   .mainTaskbar__list {
+    padding: 0 1rem;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-}
-
-.mainTaskbar__list :hover {
-  background-color: #282828;
 }
 
 .mainTaskbar__list-icons {
@@ -130,6 +127,16 @@ body {
   padding: 0.75rem 1.5rem;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+
+.mainTaskbar__list-icons:hover {
+  background-color: #282828;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .mainTaskbar__list-icons:hover {
+    background-color: transparent;
+  }
 }
 
 @media only screen and (max-width: 37.5em) {
@@ -193,10 +200,6 @@ body {
   text-align: center;
 }
 
-.timedate :hover {
-  background-color: #282828;
-}
-
 @media only screen and (max-width: 37.5em) {
   .timedate {
     display: -ms-grid;
@@ -224,6 +227,16 @@ body {
   font-size: 1.2rem;
 }
 
+.timedate .time:hover {
+  background-color: #282828;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .timedate .time:hover {
+    background-color: transparent;
+  }
+}
+
 @media only screen and (max-width: 37.5em) {
   .timedate .time {
     font-size: 1.4rem;
@@ -239,6 +252,16 @@ body {
 
 .timedate .icon {
   font-size: 2rem;
+}
+
+.timedate .icon:hover {
+  background-color: #282828;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .timedate .icon:hover {
+    background-color: transparent;
+  }
 }
 
 .bottom {
@@ -389,12 +412,15 @@ body {
   height: 6.5rem;
 }
 
-.folders__list-items .file {
-  color: #ece3e3;
-}
-
-.folders__list-items .folder {
-  color: #ffd097;
+@media only screen and (max-width: 37.5em) {
+  .folders__list-items {
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.6) !important;
+    width: 5rem;
+    height: 5rem;
+    padding: 1rem 0.5rem;
+    margin: 0rem 1rem 5rem 0rem;
+  }
 }
 
 .folders__list-items:hover {
@@ -403,6 +429,12 @@ body {
 
 .folders__list-items-folder {
   font-size: 4rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .folders__list-items-folder {
+    font-size: 3rem;
+  }
 }
 
 .folders__list-items-title {
@@ -415,11 +447,50 @@ body {
           user-select: none;
 }
 
+@media only screen and (max-width: 37.5em) {
+  .folders__list-items-title {
+    padding-top: 1.2rem;
+    margin-left: -0.2rem;
+    font-size: 1.2rem;
+  }
+}
+
+.clicked {
+  display: none;
+  background-color: #505050;
+  border-bottom: 0.3rem solid #6969ff;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .clicked {
+    display: none !important;
+  }
+}
+
+.clicked:hover {
+  background-color: #646464;
+}
+
+.file {
+  color: #ece3e3;
+}
+
+.folder {
+  color: #ffd097;
+}
+
 .projects {
   height: calc(100vh - 4.15rem);
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(12, 12, 12, 0.7);
   width: 100vw;
   z-index: 900;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .projects {
+    height: 100vh;
+    background-color: #0c0c0c;
+  }
 }
 
 #projects {
@@ -429,13 +500,14 @@ body {
 .topbar {
   height: 3rem;
   width: 100%;
-  background-color: rgba(250, 250, 250, 0.7);
+  background-color: rgba(204, 204, 204, 0.9);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-bottom: 0.1rem solid gba(250, 250, 250);
 }
 
 .topbar-icons {
