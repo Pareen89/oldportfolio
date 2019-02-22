@@ -19,12 +19,12 @@ let projects = document.getElementById("projects");
 let clickedFile = document.getElementById("clickedFile");
 let clickedFolder = document.getElementById("clickedFolder");
 let minProjectFolder = document.getElementById("minProjectFolder");
-let startMenuToogle = document.querySelector('.startMenu-toggle')
 /////////////////////////////////////////////
 //////////////////Start Menu ///////////////
 ///////////////////////////////////////////
 windows.addEventListener("click", function () {
   //startMenu.classList.add('startMenu-toggle');
+  console.log('click');
   if (startMenu.classList.contains('startMenu-toggle')) {
     startMenu.classList.remove('startMenu-toggle');
   } else {

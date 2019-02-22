@@ -298,11 +298,6 @@ body {
   grid-column: 1/2;
 }
 
-.startMenu-toggle {
-  bottom: 4.2rem;
-  display: initial;
-}
-
 .startMenu {
   background-color: rgba(0, 0, 0, 0.8);
   position: absolute;
@@ -358,6 +353,11 @@ body {
   right: 0;
   overflow: hidden;
   color: #f4f4f4;
+}
+
+.startMenu-toggle {
+  bottom: 4.2rem;
+  display: initial;
 }
 
 #notification {
@@ -477,7 +477,7 @@ body {
 @media only screen and (max-width: 37.5em) {
   .projects {
     height: 100vh;
-    background-color: #0c0c0c;
+    background-color: white;
   }
 }
 
@@ -499,6 +499,10 @@ body {
 
 .projects__section-project {
   overflow: hidden;
+}
+
+#projects {
+  display: none;
 }
 
 .topbar {
