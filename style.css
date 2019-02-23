@@ -543,6 +543,8 @@ body {
   background-color: white;
   width: 100vw;
   z-index: 900;
+  position: absolute;
+  top: 0;
 }
 
 @media only screen and (max-width: 37.5em) {
@@ -772,11 +774,6 @@ body {
   .display__itemHoverProjectsColor:hover {
     background-color: transparent;
   }
-}
-
-#place {
-  position: absolute;
-  top: 0;
 }
 
 .calculator {

@@ -521,6 +521,8 @@ body {
   background-color: white;
   width: 100vw;
   z-index: 900;
+  position: absolute;
+  top: 0;
 
   @include respond(phone) {
     height: 100vh;
@@ -714,10 +716,7 @@ body {
 
 }
 
-#place {
-  position: absolute;
-  top: 0;
-}
+
 
 //****************************//
 //        Icon Colors         //
