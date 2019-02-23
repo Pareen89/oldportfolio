@@ -399,7 +399,9 @@ body {
 //          Folders           //
 //****************************//
 .folders {
-
+  @include respond(phone) {
+    display: none;
+  }
 
   &__list {
     list-style-type: none;
@@ -456,6 +458,17 @@ body {
 
   @include respond(phone) {
     display: none !important;
+  }
+}
+
+//****************************//
+//       Mobile Folders       //
+//****************************//
+@include respond(phone) {
+  .mobile__folders {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
   }
 }
 

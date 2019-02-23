@@ -405,6 +405,12 @@ body {
   right: 0;
 }
 
+@media only screen and (max-width: 37.5em) {
+  .folders {
+    display: none;
+  }
+}
+
 .folders__list {
   list-style-type: none;
   text-align: center;
@@ -469,6 +475,17 @@ body {
 @media only screen and (max-width: 37.5em) {
   .clicked {
     display: none !important;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .mobile__folders {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[5];
+        grid-template-columns: repeat(5, 1fr);
+    -ms-grid-rows: (1fr)[5];
+        grid-template-rows: repeat(5, 1fr);
   }
 }
 
