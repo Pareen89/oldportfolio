@@ -66,7 +66,8 @@ $breakpoint:
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-
+  cursor: context-menu;
+  user-select: none;
 
 }
 
@@ -82,9 +83,9 @@ html {
   //     font-size: 50%; // 1rem = 8px. 8/16 = 50%
   //   }
 
-  // @include respond(phone) {
-  //     font-size: 55%;
-  // }
+  @include respond(phone) {
+    font-size: 59%;
+  }
 
 }
 
@@ -113,7 +114,8 @@ body {
 .background {
   background-image: url("img/bg.jpg");
   background-color: black;
-  height: 100vh;
+  height: auto !important;
+  min-height: 100vh;
   width: 100vw;
   background-position: center;
   background-repeat: no-repeat;
@@ -190,6 +192,12 @@ body {
       color: rgb(30, 144, 255);
     }
 
+    .desktop {
+      @include respond(phone) {
+        display: none;
+      }
+    }
+
     .poweroff {
       display: none;
 
@@ -197,34 +205,6 @@ body {
         display: initial;
       }
     }
-
-
-  }
-
-}
-
-// icons
-.compress {
-  display: none;
-}
-
-.github {
-  color: rgba(68, 108, 179, 1);
-}
-
-.linkedin {
-  color: rgb(0, 119, 181);
-}
-
-.codepen {
-  color: rgb(120, 120, 120);
-}
-
-.paint {
-  color: rgba(230, 126, 34, 1);
-
-  @include respond(phone) {
-    display: none;
   }
 }
 
@@ -237,8 +217,6 @@ body {
   align-self: center;
   justify-self: end;
   text-align: center;
-
-
 
   @include respond(phone) {
     display: grid;
@@ -287,7 +265,6 @@ body {
         background-color: transparent;
       }
     }
-
   }
 }
 
@@ -359,7 +336,6 @@ body {
   }
 
   // Program list area
-
   &__programs {
     height: 50rem;
     width: 27.21rem;
@@ -369,123 +345,16 @@ body {
     right: 0;
     overflow: hidden;
     color: #f4f4f4;
-
-    &-list {
-      list-style-type: none;
-      font-size: 1.3rem;
-
-      &-items {
-        height: 3.5rem;
-        display: grid;
-        grid-template-columns: 3.5rem 20rem;
-        grid-template-rows: 1fr;
-        transition: all 0.1s ease-in-out;
-
-        &:hover {
-          background-color: rgb(40, 40, 40);
-        }
-
-        &-icon {
-          font-size: 2rem;
-          grid-column: 1/2;
-          grid-row: 1/2;
-          align-self: center;
-          justify-self: center;
-          height: 3rem;
-          width: 3rem;
-          padding-top: 0.5rem;
-          padding-left: 0.5rem;
-          background-color: rgb(30, 144, 255);
-        }
-
-        &-title {
-          color: white;
-          grid-column: 2/3;
-          grid-row: 1/2;
-          align-self: center;
-          justify-self: start;
-          padding-left: 1rem;
-
-        }
-      }
-    }
-
-
   }
-
-  // title for startup menu 
-  &__title {
-    padding-top: 0.5rem;
-    height: 3.5rem;
-    width: 100%;
-    line-height: 3rem;
-    transition: all 0.1s ease-in-out;
-    padding-left: 0.3rem;
-
-    &:hover {
-      background-color: rgb(40, 40, 40);
-    }
-  }
-
-  // Scroll bar for start up menu
-  .scroll {
-    transition: all 0.2s ease-in-out;
-
-    &:hover {
-      overflow-y: scroll;
-      overflow-x: hidden;
-
-      &::-webkit-scrollbar {
-        width: 2px;
-        height: 2px;
-      }
-
-      &::-webkit-scrollbar-button {
-        width: 0px;
-        height: 0px;
-      }
-
-      &::-webkit-scrollbar-thumb {
-        background: #e1e1e1;
-        border: 0px none #ffffff;
-        border-radius: 50px;
-      }
-
-      &::-webkit-scrollbar-thumb:hover {
-        background: #ffffff;
-      }
-
-      &::-webkit-scrollbar-thumb:active {
-        background: #000000;
-      }
-
-      &::-webkit-scrollbar-track {
-        background: transparent;
-        border: 0px none #ffffff;
-        border-radius: 5px;
-      }
-
-      &::-webkit-scrollbar-track:hover {
-        background: transparent;
-      }
-
-      &::-webkit-scrollbar-track:active {
-        background: transparent;
-      }
-
-      &::-webkit-scrollbar-corner {
-        background: transparent;
-      }
-    }
-  }
-
 }
 
-// toggle class for DOM
 .startMenu-toggle {
   bottom: 4.2rem;
   display: initial;
 }
+
+
+
 
 // Notification number
 #notification {
@@ -513,6 +382,7 @@ body {
   position: absolute;
   right: -39.5rem;
   display: none;
+  z-index: 999;
 
   @include respond(phone) {
     height: calc(100vh - 8.3rem);
@@ -589,28 +459,43 @@ body {
   }
 }
 
-.file {
-  color: rgb(236, 227, 227);
-}
-
-.folder {
-  color: rgb(255, 208, 151);
-
-}
-
-
 //****************************//
 //        Project Folders     //
 //****************************//
 .projects {
   height: calc(100vh - 4.15rem);
-  background-color: rgba(12, 12, 12, 0.7);
+  background-color: white;
   width: 100vw;
   z-index: 900;
 
   @include respond(phone) {
     height: 100vh;
-    background-color: rgba(12, 12, 12, 1);
+    background-color: white;
+  }
+
+  &__section {
+    display: grid;
+    grid-template-columns: 25vw 75vw;
+    grid-template-rows: 1fr;
+    width: 100%;
+    height: calc(100% - 3rem);
+
+    &-folders {
+      border-right: 0.15rem solid #f4f4f4;
+      overflow: hidden;
+    }
+
+    &-project {
+      overflow: hidden;
+      padding: 0.5rem 0.35rem 0.5rem 0.5rem;
+
+      .project {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+
+      }
+    }
   }
 }
 
@@ -619,15 +504,16 @@ body {
 }
 
 //****************************//
-//            Top Bar         //
+//     Top Bar(close/min)     //
 //****************************//
 .topbar {
   height: 3rem;
   width: 100%;
-  background-color: rgba(204, 204, 204, 0.9);
+  background-color: rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
-  border-bottom: .1rem solid gba(250, 250, 250);
+  border-bottom: 0.15rem solid #f4f4f4;
+  overflow: hidden;
 
   &-icons {
     position: absolute;
@@ -665,7 +551,182 @@ body {
   }
 }
 
+//****************************//
+//      Display Icon List     //
+//****************************//
+.display {
+  list-style-type: none;
+  font-size: 1.3rem;
+
+  &__title {
+    height: 3.5rem;
+    display: grid;
+    grid-template-columns: 3.5rem 20rem;
+    grid-template-rows: 1fr;
+    transition: all 0.1s ease-in-out;
+    text-transform: uppercase;
+    padding: 0.5rem;
+    cursor: context-menu;
+    user-select: none;
+  }
+
+  &__titleHoverStartMenuColor:hover {
+    background-color: rgba(125, 125, 125, 0.5);
+  }
+
+  &__titleHoverProjectColor:hover {
+    background-color: rgba(125, 125, 125, 0.5);
+  }
+
+  &__item {
+    height: 3.5rem;
+    display: grid;
+    grid-template-columns: 3.5rem 20rem;
+    grid-template-rows: 1fr;
+    transition: all 0.1s ease-in-out;
+
+    &-icon {
+      font-size: 2rem;
+      grid-column: 1/2;
+      grid-row: 1/2;
+      align-self: center;
+      justify-self: center;
+      height: 3rem;
+      width: 3rem;
+      padding-top: 0.5rem;
+      padding-left: 0.5rem;
+
+    }
+
+    &-iconStartMenuBackgroundColor {
+      background-color: rgb(30, 144, 255);
+    }
+
+    &-iconProjectsBackgroundColor {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    &-name {
+      grid-column: 2/3;
+      grid-row: 1/2;
+      align-self: center;
+      justify-self: start;
+      padding-left: 1rem;
+    }
+
+    &-nameStartMenuColor {
+      color: white;
+    }
+  }
+
+  &__itemHoverStartMenuColor:hover {
+    background-color: rgba(125, 125, 125, 0.5);
+  }
+
+  &__itemHoverProjectsColor:hover {
+    background-color: rgba(125, 125, 125, 0.5);
+  }
+
+}
+
 #place {
   position: absolute;
   top: 0;
+}
+
+//****************************//
+//        Icon Colors         //
+//****************************//
+.car {
+  color: rgb(255, 255, 255);
+}
+
+.codepen {
+  color: rgb(120, 120, 120);
+}
+
+.compress {
+  display: none;
+}
+
+.file {
+  color: rgb(236, 227, 227);
+}
+
+.folder {
+  color: rgb(255, 208, 151);
+}
+
+.github {
+  color: rgba(68, 108, 179, 1);
+}
+
+.linkedin {
+  color: rgb(0, 119, 181);
+}
+
+.paint {
+  color: rgba(230, 126, 34, 1);
+}
+
+.profile {
+  color: rgb(23, 234, 153);
+}
+
+.profile2 {
+  color: rgb(32, 123, 123);
+}
+
+//****************************//
+//        Scroll bar          //
+//****************************//
+.scroll {
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+      width: 2px;
+      height: 2px;
+    }
+
+    &::-webkit-scrollbar-button {
+      width: 0px;
+      height: 0px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #e1e1e1;
+      border: 0px none #ffffff;
+      border-radius: 50px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #ffffff;
+    }
+
+    &::-webkit-scrollbar-thumb:active {
+      background: #000000;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+      border: 0px none #ffffff;
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-track:hover {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-track:active {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-corner {
+      background: transparent;
+    }
+  }
 }

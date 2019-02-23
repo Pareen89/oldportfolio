@@ -22,18 +22,25 @@ let minProjectFolder = document.getElementById("minProjectFolder");
 /////////////////////////////////////////////
 //////////////////Start Menu ///////////////
 ///////////////////////////////////////////
-windows.addEventListener("click", function() {
-  startMenu.classList.toggle("startMenu-toggle");
+windows.addEventListener("click", function () {
+  //startMenu.classList.add('startMenu-toggle');
+  console.log('click');
+  if (startMenu.classList.contains('startMenu-toggle')) {
+    startMenu.classList.remove('startMenu-toggle');
+  } else {
+    startMenu.classList.add('startMenu-toggle');
+  }
 });
+
 
 /////////////////////////////////////////////
 //////////////Notification Click ///////////
 ///////////////////////////////////////////
-icon.addEventListener("click", function() {
+icon.addEventListener("click", function () {
   notification.innerHTML = "";
   aboutme.classList.toggle("aboutme-toggle");
 });
-about.addEventListener("click", function() {
+about.addEventListener("click", function () {
   notification.innerHTML = "";
   aboutme.classList.toggle("aboutme-toggle");
 });
@@ -104,18 +111,18 @@ var update = setInterval(timeAndDate, 1000);
 /////////////////////////////////////////////
 ////////////////Folder Click////////////////
 ///////////////////////////////////////////
-resumeFile.addEventListener("click", function() {
+resumeFile.addEventListener("click", function () {
   resumeFile.style.backgroundColor = "rgba(255, 255, 255, 0.6)";
 });
-projectsFolder.addEventListener("click", function() {
+projectsFolder.addEventListener("click", function () {
   projectsFolder.style.backgroundColor = "rgba(255, 255, 255, 0.6)";
 });
-window.addEventListener("mouseup", function(event) {
+window.addEventListener("mouseup", function (event) {
   if (event.target !== resumeFile) {
     resumeFile.style.backgroundColor = "transparent";
   }
 });
-window.addEventListener("mouseup", function(event) {
+window.addEventListener("mouseup", function (event) {
   if (event.target !== projectsFolder) {
     projectsFolder.style.backgroundColor = "transparent";
   }
@@ -126,21 +133,21 @@ window.addEventListener("mouseup", function(event) {
 ///////////////////////////////////////////
 
 // Project Folder
-projectsFolder.addEventListener("dblclick", function() {
+projectsFolder.addEventListener("dblclick", function () {
   projects.style.display = "inherit";
   clickedFolder.style.display = "inherit";
   clickedFolder.style.background = "rgb(80, 80, 80)";
 });
 
-closeProjectFolder.addEventListener("click", function() {
+closeProjectFolder.addEventListener("click", function () {
   projects.style.display = "none";
   clickedFolder.style.display = "none";
 });
-minProjectFolder.addEventListener("click", function() {
+minProjectFolder.addEventListener("click", function () {
   projects.style.display = "none";
   clickedFolder.style.backgroundColor = "transparent";
 });
-clickedFolder.addEventListener("click", function() {
+clickedFolder.addEventListener("click", function () {
   if (projects.style.display == "none") {
     projects.style.display = "inherit";
     clickedFolder.style.backgroundColor = "rgb(80, 80, 80)";
