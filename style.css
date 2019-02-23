@@ -16,6 +16,11 @@ $breakpoint:
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  cursor: context-menu;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 html {
@@ -499,6 +504,13 @@ body {
 
 .projects__section-project {
   overflow: hidden;
+  padding: 0.5rem 0.35rem 0.5rem 0.5rem;
+}
+
+.projects__section-project .project {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 #projects {
@@ -508,7 +520,7 @@ body {
 .topbar {
   height: 3rem;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -516,6 +528,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   border-bottom: 0.15rem solid #f4f4f4;
+  overflow: hidden;
 }
 
 .topbar-icons {
@@ -654,16 +667,24 @@ body {
   top: 0;
 }
 
+.car {
+  color: white;
+}
+
+.codepen {
+  color: #787878;
+}
+
+.compress {
+  display: none;
+}
+
 .file {
   color: #ece3e3;
 }
 
 .folder {
   color: #ffd097;
-}
-
-.compress {
-  display: none;
 }
 
 .github {
@@ -674,18 +695,16 @@ body {
   color: #0077b5;
 }
 
-.codepen {
-  color: #787878;
-}
-
 .paint {
   color: #e67e22;
 }
 
-@media only screen and (max-width: 37.5em) {
-  .paint {
-    display: none;
-  }
+.profile {
+  color: #17ea99;
+}
+
+.profile2 {
+  color: #207b7b;
 }
 
 .scroll {

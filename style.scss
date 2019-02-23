@@ -66,7 +66,8 @@ $breakpoint:
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-
+  cursor: context-menu;
+  user-select: none;
 
 }
 
@@ -486,6 +487,14 @@ body {
 
     &-project {
       overflow: hidden;
+      padding: 0.5rem 0.35rem 0.5rem 0.5rem;
+
+      .project {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+
+      }
     }
   }
 }
@@ -500,10 +509,11 @@ body {
 .topbar {
   height: 3rem;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
   border-bottom: 0.15rem solid #f4f4f4;
+  overflow: hidden;
 
   &-icons {
     position: absolute;
@@ -627,6 +637,17 @@ body {
 //****************************//
 //        Icon Colors         //
 //****************************//
+.car {
+  color: rgb(255, 255, 255);
+}
+
+.codepen {
+  color: rgb(120, 120, 120);
+}
+
+.compress {
+  display: none;
+}
 
 .file {
   color: rgb(236, 227, 227);
@@ -634,10 +655,6 @@ body {
 
 .folder {
   color: rgb(255, 208, 151);
-}
-
-.compress {
-  display: none;
 }
 
 .github {
@@ -648,16 +665,16 @@ body {
   color: rgb(0, 119, 181);
 }
 
-.codepen {
-  color: rgb(120, 120, 120);
-}
-
 .paint {
   color: rgba(230, 126, 34, 1);
+}
 
-  @include respond(phone) {
-    display: none;
-  }
+.profile {
+  color: rgb(23, 234, 153);
+}
+
+.profile2 {
+  color: rgb(32, 123, 123);
 }
 
 //****************************//
