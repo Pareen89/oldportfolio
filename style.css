@@ -64,7 +64,7 @@ body {
   display: none;
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 75em) {
   .topTaskbar {
     display: -ms-grid;
     display: grid;
@@ -79,14 +79,14 @@ body {
   height: 4.15rem;
   width: 100vw;
   background-color: rgba(12, 12, 12, 0.8);
-  -ms-grid-columns: (1fr)[12];
-      grid-template-columns: repeat(12, 1fr);
+  -ms-grid-columns: 80vw 20vw;
+      grid-template-columns: 80vw 20vw;
   -ms-grid-rows: 1fr;
       grid-template-rows: 1fr;
   overflow: hidden;
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 75em) {
   .topTaskbar,
   .mainTaskbar {
     -ms-grid-columns: 1fr;
@@ -109,6 +109,12 @@ body {
   bottom: 0;
 }
 
+@media only screen and (max-width: 75em) {
+  .mainTaskbar {
+    height: 8rem;
+  }
+}
+
 .mainTaskbar__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -118,12 +124,28 @@ body {
       align-self: center;
 }
 
+@media only screen and (max-width: 75em) {
+  .mainTaskbar__list {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[6];
+        grid-template-columns: repeat(6, 1fr);
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+  }
+}
+
+@media only screen and (max-width: 56.25em) {
+  .mainTaskbar__list {
+    -ms-grid-columns: (1fr)[5];
+        grid-template-columns: repeat(5, 1fr);
+  }
+}
+
 @media only screen and (max-width: 37.5em) {
   .mainTaskbar__list {
-    padding: 0 1rem;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -135,13 +157,41 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
+@media only screen and (max-width: 75em) {
+  .mainTaskbar__list-icons {
+    height: 5rem;
+    width: 5rem;
+    background-color: rgba(125, 125, 125, 0.5);
+    padding: 0;
+    border-radius: 1rem;
+    font-size: 3rem;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    -ms-grid-row-align: center;
+        align-self: center;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+  }
+  .mainTaskbar__list-icons i {
+    -ms-grid-column-align: center;
+        justify-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
 .mainTaskbar__list-icons:hover {
   background-color: #282828;
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 75em) {
   .mainTaskbar__list-icons:hover {
-    background-color: transparent;
+    background-color: rgba(125, 125, 125, 0.5);
   }
 }
 
@@ -155,19 +205,15 @@ body {
   color: dodgerblue;
 }
 
-@media only screen and (max-width: 37.5em) {
-  .mainTaskbar__list .desktop {
+@media only screen and (max-width: 56.25em) {
+  .mainTaskbar__list .full {
     display: none;
   }
 }
 
-.mainTaskbar__list .poweroff {
-  display: none;
-}
-
 @media only screen and (max-width: 37.5em) {
-  .mainTaskbar__list .poweroff {
-    display: initial;
+  .mainTaskbar__list .desktop {
+    display: none;
   }
 }
 
@@ -186,7 +232,7 @@ body {
   text-align: center;
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 75em) {
   .timedate {
     display: -ms-grid;
     display: grid;
@@ -217,20 +263,20 @@ body {
   background-color: #282828;
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 75em) {
   .timedate .time:hover {
     background-color: transparent;
   }
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 75em) {
   .timedate .time {
     font-size: 1.4rem;
     padding-top: 1rem;
   }
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 75em) {
   .timedate #date {
     display: none;
   }
@@ -244,7 +290,7 @@ body {
   background-color: #282828;
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 75em) {
   .timedate .icon:hover {
     background-color: transparent;
   }
@@ -256,7 +302,7 @@ body {
   display: flex;
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 75em) {
   .bottom {
     display: none;
   }
@@ -267,7 +313,7 @@ body {
   display: grid;
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 75em) {
   .top {
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
@@ -359,6 +405,12 @@ body {
   display: initial;
 }
 
+@media only screen and (max-width: 75em) {
+  .startMenu-toggle {
+    bottom: 8rem;
+  }
+}
+
 @media only screen and (max-width: 37.5em) {
   .startMenu-toggle {
     display: none;
@@ -377,7 +429,7 @@ body {
   cursor: context-menu;
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 75em) {
   #notification {
     top: 0.85rem;
   }
@@ -490,7 +542,7 @@ body {
         grid-template-columns: repeat(6, 1fr);
     -ms-grid-rows: (1fr)[7];
         grid-template-rows: repeat(7, 1fr);
-    height: calc(100vh - 8.30rem);
+    height: calc(100vh - 12.30rem);
     width: 100vw;
     overflow: hidden;
     color: white;
@@ -545,6 +597,12 @@ body {
   z-index: 900;
   position: absolute;
   top: 0;
+}
+
+@media only screen and (max-width: 75em) {
+  .projects {
+    height: calc(100vh - 6rem);
+  }
 }
 
 @media only screen and (max-width: 37.5em) {
@@ -678,8 +736,20 @@ body {
   background-color: rgba(125, 125, 125, 0.5);
 }
 
+@media only screen and (max-width: 75em) {
+  .display__titleHoverStartMenuColor:hover {
+    background-color: transparent;
+  }
+}
+
 .display__titleHoverProjectColor:hover {
   background-color: rgba(125, 125, 125, 0.5);
+}
+
+@media only screen and (max-width: 75em) {
+  .display__titleHoverProjectColor:hover {
+    background-color: transparent;
+  }
 }
 
 .display__item {
@@ -766,11 +836,23 @@ body {
   background-color: rgba(125, 125, 125, 0.5);
 }
 
+@media only screen and (max-width: 75em) {
+  .display__itemHoverStartMenuColor:hover {
+    background-color: transparent;
+  }
+}
+
 .display__itemHoverProjectsColor:hover {
   background-color: rgba(125, 125, 125, 0.5);
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 75em) {
+  .display__itemHoverProjectsColor:hover {
+    background-color: transparent;
+  }
+}
+
+@media only screen and (max-width: 75em) {
   .display__itemHoverProjectsColor:hover {
     background-color: transparent;
   }
