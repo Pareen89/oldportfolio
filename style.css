@@ -405,7 +405,7 @@ body {
   right: 0;
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 75em) {
   .folders {
     display: none;
   }
@@ -424,7 +424,7 @@ body {
   height: 6.5rem;
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 75em) {
   .folders__list-items {
     border-radius: 1rem;
     background-color: rgba(255, 255, 255, 0.6) !important;
@@ -443,7 +443,7 @@ body {
   font-size: 4rem;
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 75em) {
   .folders__list-items-folder {
     font-size: 3rem;
   }
@@ -459,7 +459,7 @@ body {
           user-select: none;
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 75em) {
   .folders__list-items-title {
     padding-top: 1.2rem;
     margin-left: -0.2rem;
@@ -472,7 +472,7 @@ body {
   border-bottom: 0.3rem solid #6969ff;
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 75em) {
   .clicked {
     display: none !important;
   }
@@ -482,19 +482,40 @@ body {
   display: none;
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 75em) {
   .mobile {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (1fr)[4];
-        grid-template-columns: repeat(4, 1fr);
-    -ms-grid-rows: (1fr)[5];
-        grid-template-rows: repeat(5, 1fr);
+    -ms-grid-columns: (1fr)[6];
+        grid-template-columns: repeat(6, 1fr);
+    -ms-grid-rows: (1fr)[7];
+        grid-template-rows: repeat(7, 1fr);
     height: calc(100vh - 8.30rem);
     width: 100vw;
     overflow: hidden;
     color: white;
   }
+}
+
+@media only screen and (max-width: 75em) and (max-width: 56.25em) {
+  .mobile {
+    -ms-grid-columns: (1fr)[5];
+        grid-template-columns: repeat(5, 1fr);
+    -ms-grid-rows: (1fr)[6];
+        grid-template-rows: repeat(6, 1fr);
+  }
+}
+
+@media only screen and (max-width: 75em) and (max-width: 37.5em) {
+  .mobile {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    -ms-grid-rows: (1fr)[5];
+        grid-template-rows: repeat(5, 1fr);
+  }
+}
+
+@media only screen and (max-width: 75em) {
   .mobile__folder {
     height: 5rem;
     width: 5rem;
@@ -561,6 +582,7 @@ body {
   .projects__section-folders {
     width: 100vw;
     height: 6.5rem;
+    border-bottom: 0.15rem solid #f4f4f4;
   }
 }
 
@@ -805,7 +827,7 @@ body {
   color: #207b7b;
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 75em) {
   .scroll {
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
