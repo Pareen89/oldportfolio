@@ -83,9 +83,9 @@ html {
   //     font-size: 50%; // 1rem = 8px. 8/16 = 50%
   //   }
 
-  @include respond(phone) {
-    font-size: 59%;
-  }
+  // @include respond(phone) {
+  //   font-size: 59%;
+  // }
 
 }
 
@@ -464,11 +464,39 @@ body {
 //****************************//
 //       Mobile Folders       //
 //****************************//
+.mobile {
+  display: none;
+}
+
 @include respond(phone) {
-  .mobile__folders {
+  .mobile {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
+    height: calc(100vh - 8.30rem);
+    width: 100vw;
+    overflow: hidden;
+    color: white;
+
+    &__folder {
+      height: 5rem;
+      width: 5rem;
+      border-radius: 1rem;
+      background-color: rgba(125, 125, 125, 0.5);
+      justify-self: center;
+      align-self: center;
+      text-align: center;
+
+      &-icon {
+        font-size: 3.5rem;
+        line-height: 5rem;
+      }
+
+      &-name {
+        font-size: 1.2rem;
+        color: white;
+      }
+    }
   }
 }
 
@@ -650,6 +678,10 @@ body {
 //****************************//
 //        Icon Colors         //
 //****************************//
+.calculator {
+  color: rgb(255, 165, 0);
+}
+
 .car {
   color: rgb(255, 255, 255);
 }
@@ -676,6 +708,10 @@ body {
 
 .linkedin {
   color: rgb(0, 119, 181);
+}
+
+.notepad {
+  color: rgb(135, 206, 235);
 }
 
 .paint {

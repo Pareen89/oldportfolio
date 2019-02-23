@@ -23,8 +23,6 @@ let minProjectFolder = document.getElementById("minProjectFolder");
 //////////////////Start Menu ///////////////
 ///////////////////////////////////////////
 windows.addEventListener("click", function () {
-  //startMenu.classList.add('startMenu-toggle');
-  console.log('click');
   if (startMenu.classList.contains('startMenu-toggle')) {
     startMenu.classList.remove('startMenu-toggle');
   } else {

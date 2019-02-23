@@ -27,12 +27,6 @@ html {
   font-size: 62.5%;
 }
 
-@media only screen and (max-width: 37.5em) {
-  html {
-    font-size: 59%;
-  }
-}
-
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -478,14 +472,42 @@ body {
   }
 }
 
+.mobile {
+  display: none;
+}
+
 @media only screen and (max-width: 37.5em) {
-  .mobile__folders {
+  .mobile {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (1fr)[5];
-        grid-template-columns: repeat(5, 1fr);
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
     -ms-grid-rows: (1fr)[5];
         grid-template-rows: repeat(5, 1fr);
+    height: calc(100vh - 8.30rem);
+    width: 100vw;
+    overflow: hidden;
+    color: white;
+  }
+  .mobile__folder {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 1rem;
+    background-color: rgba(125, 125, 125, 0.5);
+    -ms-grid-column-align: center;
+        justify-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    text-align: center;
+  }
+  .mobile__folder-icon {
+    font-size: 3.5rem;
+    line-height: 5rem;
+  }
+  .mobile__folder-name {
+    font-size: 1.2rem;
+    color: white;
   }
 }
 
@@ -684,6 +706,10 @@ body {
   top: 0;
 }
 
+.calculator {
+  color: orange;
+}
+
 .car {
   color: white;
 }
@@ -710,6 +736,10 @@ body {
 
 .linkedin {
   color: #0077b5;
+}
+
+.notepad {
+  color: skyblue;
 }
 
 .paint {
