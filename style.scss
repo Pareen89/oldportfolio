@@ -127,7 +127,7 @@ body {
 .topTaskbar {
   display: none;
 
-  @include respond(phone) {
+  @include respond(tab-land) {
     display: grid;
     grid-row: 1/2;
   }
@@ -138,11 +138,11 @@ body {
   height: 4.15rem;
   width: 100vw;
   background-color: rgba(12, 12, 12, 0.8);
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: 80vw 20vw;
   grid-template-rows: 1fr;
   overflow: hidden;
 
-  @include respond(phone) {
+  @include respond(tab-land) {
     grid-template-columns: 1fr;
   }
 }
@@ -156,14 +156,28 @@ body {
   position: absolute;
   bottom: 0;
 
+  @include respond(tab-land) {
+    height: 8rem;
+  }
+
   &__list {
     display: flex;
     list-style-type: none;
     align-self: center;
 
+    @include respond(tab-land) {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: 1fr;
+
+    }
+
+    @include respond(tab-port) {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
     @include respond(phone) {
-      padding: 0 1rem;
-      justify-content: space-between;
+      grid-template-columns: repeat(4, 1fr);
     }
 
     &-icons {
@@ -172,11 +186,30 @@ body {
       padding: 0.75rem 1.5rem;
       transition: all 0.3s ease-in-out;
 
+      @include respond(tab-land) {
+        height: 5rem;
+        width: 5rem;
+        background-color: rgba(125, 125, 125, 0.5);
+        padding: 0;
+        border-radius: 1rem;
+        font-size: 3rem;
+        justify-self: center;
+        align-self: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+
+        i {
+          justify-self: center;
+          align-self: center;
+        }
+      }
+
       &:hover {
         background-color: rgb(40, 40, 40);
 
-        @include respond(phone) {
-          background-color: transparent;
+        @include respond(tab-land) {
+          background-color: rgba(125, 125, 125, 0.5);
         }
       }
     }
@@ -191,17 +224,15 @@ body {
       color: rgb(30, 144, 255);
     }
 
-    .desktop {
-      @include respond(phone) {
+    .full {
+      @include respond(tab-port) {
         display: none;
       }
     }
 
-    .poweroff {
-      display: none;
-
+    .desktop {
       @include respond(phone) {
-        display: initial;
+        display: none;
       }
     }
   }
@@ -217,7 +248,7 @@ body {
   justify-self: end;
   text-align: center;
 
-  @include respond(phone) {
+  @include respond(tab-land) {
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr;
@@ -237,19 +268,19 @@ body {
     &:hover {
       background-color: rgb(40, 40, 40);
 
-      @include respond(phone) {
+      @include respond(tab-land) {
         background-color: transparent;
       }
     }
 
-    @include respond(phone) {
+    @include respond(tab-land) {
       font-size: 1.4rem;
       padding-top: 1rem;
     }
   }
 
   #date {
-    @include respond(phone) {
+    @include respond(tab-land) {
       display: none;
     }
   }
@@ -260,7 +291,7 @@ body {
     &:hover {
       background-color: rgb(40, 40, 40);
 
-      @include respond(phone) {
+      @include respond(tab-land) {
         background-color: transparent;
       }
     }
@@ -270,7 +301,7 @@ body {
 .bottom {
   display: flex;
 
-  @include respond(phone) {
+  @include respond(tab-land) {
     display: none;
   }
 }
@@ -278,7 +309,7 @@ body {
 .top {
   display: grid;
 
-  @include respond(phone) {
+  @include respond(tab-land) {
     grid-column: 1/13;
   }
 }
@@ -351,6 +382,10 @@ body {
   bottom: 4.2rem;
   display: initial;
 
+  @include respond(tab-land) {
+    bottom: 8rem;
+  }
+
   @include respond(phone) {
     display: none;
   }
@@ -370,7 +405,7 @@ body {
   animation: glow 1s ease-in-out infinite alternate;
   cursor: context-menu;
 
-  @include respond(phone) {
+  @include respond(tab-land) {
     top: 0.85rem;
   }
 }
@@ -476,7 +511,7 @@ body {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(7, 1fr);
-    height: calc(100vh - 8.30rem);
+    height: calc(100vh - 12.30rem);
     width: 100vw;
     overflow: hidden;
     color: white;
@@ -523,6 +558,10 @@ body {
   z-index: 900;
   position: absolute;
   top: 0;
+
+  @include respond(tab-land) {
+    height: calc(100vh - 6rem);
+  }
 
   @include respond(phone) {
     height: 100vh;
@@ -642,10 +681,18 @@ body {
 
   &__titleHoverStartMenuColor:hover {
     background-color: rgba(125, 125, 125, 0.5);
+
+    @include respond(tab-land) {
+      background-color: transparent;
+    }
   }
 
   &__titleHoverProjectColor:hover {
     background-color: rgba(125, 125, 125, 0.5);
+
+    @include respond(tab-land) {
+      background-color: transparent;
+    }
   }
 
   &__item {
@@ -704,12 +751,20 @@ body {
 
   &__itemHoverStartMenuColor:hover {
     background-color: rgba(125, 125, 125, 0.5);
+
+    @include respond(tab-land) {
+      background-color: transparent;
+    }
   }
 
   &__itemHoverProjectsColor:hover {
     background-color: rgba(125, 125, 125, 0.5);
 
-    @include respond(phone) {
+    @include respond(tab-land) {
+      background-color: transparent;
+    }
+
+    @include respond(tab-land) {
       background-color: transparent;
     }
   }
