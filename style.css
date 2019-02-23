@@ -27,12 +27,6 @@ html {
   font-size: 62.5%;
 }
 
-@media only screen and (max-width: 37.5em) {
-  html {
-    font-size: 59%;
-  }
-}
-
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -365,6 +359,12 @@ body {
   display: initial;
 }
 
+@media only screen and (max-width: 37.5em) {
+  .startMenu-toggle {
+    display: none;
+  }
+}
+
 #notification {
   font-size: 1.2rem;
   color: red;
@@ -405,6 +405,12 @@ body {
   right: 0;
 }
 
+@media only screen and (max-width: 75em) {
+  .folders {
+    display: none;
+  }
+}
+
 .folders__list {
   list-style-type: none;
   text-align: center;
@@ -418,7 +424,7 @@ body {
   height: 6.5rem;
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 75em) {
   .folders__list-items {
     border-radius: 1rem;
     background-color: rgba(255, 255, 255, 0.6) !important;
@@ -437,7 +443,7 @@ body {
   font-size: 4rem;
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 75em) {
   .folders__list-items-folder {
     font-size: 3rem;
   }
@@ -453,7 +459,7 @@ body {
           user-select: none;
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 75em) {
   .folders__list-items-title {
     padding-top: 1.2rem;
     margin-left: -0.2rem;
@@ -466,9 +472,69 @@ body {
   border-bottom: 0.3rem solid #6969ff;
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 75em) {
   .clicked {
     display: none !important;
+  }
+}
+
+.mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 75em) {
+  .mobile {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[6];
+        grid-template-columns: repeat(6, 1fr);
+    -ms-grid-rows: (1fr)[7];
+        grid-template-rows: repeat(7, 1fr);
+    height: calc(100vh - 8.30rem);
+    width: 100vw;
+    overflow: hidden;
+    color: white;
+  }
+}
+
+@media only screen and (max-width: 75em) and (max-width: 56.25em) {
+  .mobile {
+    -ms-grid-columns: (1fr)[5];
+        grid-template-columns: repeat(5, 1fr);
+    -ms-grid-rows: (1fr)[6];
+        grid-template-rows: repeat(6, 1fr);
+  }
+}
+
+@media only screen and (max-width: 75em) and (max-width: 37.5em) {
+  .mobile {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    -ms-grid-rows: (1fr)[5];
+        grid-template-rows: repeat(5, 1fr);
+  }
+}
+
+@media only screen and (max-width: 75em) {
+  .mobile__folder {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 1rem;
+    background-color: rgba(125, 125, 125, 0.5);
+    -ms-grid-column-align: center;
+        justify-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    text-align: center;
+  }
+  .mobile__folder-icon {
+    font-size: 3.5rem;
+    line-height: 5rem;
+  }
+  .mobile__folder-name {
+    font-size: 1.2rem;
+    color: white;
   }
 }
 
@@ -477,6 +543,8 @@ body {
   background-color: white;
   width: 100vw;
   z-index: 900;
+  position: absolute;
+  top: 0;
 }
 
 @media only screen and (max-width: 37.5em) {
@@ -497,9 +565,27 @@ body {
   height: calc(100% - 3rem);
 }
 
+@media only screen and (max-width: 37.5em) {
+  .projects__section {
+    -ms-grid-columns: 100vw;
+        grid-template-columns: 100vw;
+    -ms-grid-rows: 3rem calc(100vh - 3rem);
+        grid-template-rows: 3rem calc(100vh - 3rem);
+    overflow: hidden;
+  }
+}
+
 .projects__section-folders {
   border-right: 0.15rem solid #f4f4f4;
   overflow: hidden;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .projects__section-folders {
+    width: 100vw;
+    height: 6.5rem;
+    border-bottom: 0.15rem solid #f4f4f4;
+  }
 }
 
 .projects__section-project {
@@ -608,6 +694,14 @@ body {
   transition: all 0.1s ease-in-out;
 }
 
+@media only screen and (max-width: 37.5em) {
+  .display__item {
+    padding: 0 0.50rem;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
 .display__item-icon {
   font-size: 2rem;
   -ms-grid-column: 1;
@@ -625,6 +719,13 @@ body {
   width: 3rem;
   padding-top: 0.5rem;
   padding-left: 0.5rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .display__item-icon {
+    -ms-grid-column-align: start;
+        justify-self: start;
+  }
 }
 
 .display__item-iconStartMenuBackgroundColor {
@@ -650,6 +751,13 @@ body {
   padding-left: 1rem;
 }
 
+@media only screen and (max-width: 37.5em) {
+  .display__item-name {
+    -ms-grid-column-align: end;
+        justify-self: end;
+  }
+}
+
 .display__item-nameStartMenuColor {
   color: white;
 }
@@ -662,9 +770,14 @@ body {
   background-color: rgba(125, 125, 125, 0.5);
 }
 
-#place {
-  position: absolute;
-  top: 0;
+@media only screen and (max-width: 37.5em) {
+  .display__itemHoverProjectsColor:hover {
+    background-color: transparent;
+  }
+}
+
+.calculator {
+  color: orange;
 }
 
 .car {
@@ -695,6 +808,10 @@ body {
   color: #0077b5;
 }
 
+.notepad {
+  color: skyblue;
+}
+
 .paint {
   color: #e67e22;
 }
@@ -705,6 +822,48 @@ body {
 
 .profile2 {
   color: #207b7b;
+}
+
+@media only screen and (max-width: 75em) {
+  .scroll {
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .scroll::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+  }
+  .scroll::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+  }
+  .scroll::-webkit-scrollbar-thumb {
+    background: #e1e1e1;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+  }
+  .scroll::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+  }
+  .scroll::-webkit-scrollbar-thumb:active {
+    background: #000000;
+  }
+  .scroll::-webkit-scrollbar-track {
+    background: transparent;
+    border: 0px none #ffffff;
+    border-radius: 5px;
+  }
+  .scroll::-webkit-scrollbar-track:hover {
+    background: transparent;
+  }
+  .scroll::-webkit-scrollbar-track:active {
+    background: transparent;
+  }
+  .scroll::-webkit-scrollbar-corner {
+    background: transparent;
+  }
 }
 
 .scroll {

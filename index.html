@@ -1,89 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Front End Web Development</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-    crossorigin="anonymous" />
-  <link rel="stylesheet" href="style.css" />
-  <title>Front End Web Development</title>
-</head>
-
-<body>
-  <main class="background container">
-
-    <!----------------------------------->
-    <!-------TOP TASKBAR (mobile)-------->
-    <!----------------------------------->
-    <section class="topTaskbar">
-      <ul class="timedate top">
-        <li class="timedate__list time center">
-          <p id="time"></p>
-          <p id="date"></p>
-        </li>
-        <li class="timedate__list icon right" id="about">
-          <i class="far fa-comment-alt"></i>
-        </li>
-      </ul>
-    </section>
-    <!----------------------------------->
-    <!-------------TASKBAR--------------->
-    <!----------------------------------->
-    <section class="mainTaskbar">
-      <!--Left Side of Taskebar-->
-      <ul class="mainTaskbar__list">
-        <li id="windows" class="mainTaskbar__list-icons windows">
-          <i class="fab fa-windows"></i>
-        </li>
-        <li class="mainTaskbar__list-icons poweroff">
-          <i class="fas fa-power-off"></i>
-        </li>
-        <li class="mainTaskbar__list-icons arrows" id="full">
-          <i class=" full fas fa-expand" id="arrow"></i>
-        </li>
-        <li class="mainTaskbar__list-icons github">
-          <i class="fab fa-github"></i>
-        </li>
-        <li class="mainTaskbar__list-icons linkedin">
-          <i class="fab fa-linkedin"></i>
-        </li>
-        <li class="mainTaskbar__list-icons email">
-          <i class="fas fa-envelope"></i>
-        </li>
-        <li class="mainTaskbar__list-icons codepen">
-          <i class="fab fa-codepen"></i>
-        </li>
-        <li class="mainTaskbar__list-icons paint desktop">
-          <i class="fas fa-palette"></i>
-        </li>
-        <li id="clickedFolder" class="mainTaskbar__list-icons clicked">
-          <i class="fas fa-folder-open folder"></i>
-        </li>
-        <li id="clickedFile" class="mainTaskbar__list-icons clicked">
-          <i class="fas fa-file file"></i>
-        </li>
-      </ul>
-      <!--Right Side of Taskebar-->
-      <ul class="timedate bottom">
-        <li class="timedate__list time">
-          <p id="time1"></p>
-          <p id="date1"></p>
-        </li>
-        <li class="timedate__list icon" id="icon">
-          <i class="far fa-comment-alt"></i>
-        </li>
-      </ul>
-    </section>
-    <!--Notification Number for taskbar-->
-    <div id="notification">
-      <p>1</p>
-    </div>
-    <!----------------------------------->
-    <!-------------Start Menu------------>
-    <!----------------------------------->
-    <div class="transition">
+  <body>
+    <main class="background container">
+      <!----------------------------------->
+      <!-------TOP TASKBAR (mobile)-------->
+      <!----------------------------------->
+      <section class="topTaskbar">
+        <ul class="timedate top">
+          <li class="timedate__list time center">
+            <p id="time"></p>
+            <p id="date"></p>
+          </li>
+          <li class="timedate__list icon right" id="about">
+            <i class="far fa-comment-alt"></i>
+          </li>
+        </ul>
+      </section>
+      <!----------------------------------->
+      <!-------------TASKBAR--------------->
+      <!----------------------------------->
+      <section class="mainTaskbar">
+        <!--Left Side of Taskebar-->
+        <ul class="mainTaskbar__list">
+          <li id="windows" class="mainTaskbar__list-icons windows">
+            <i class="fab fa-windows"></i>
+          </li>
+          <li class="mainTaskbar__list-icons poweroff">
+            <i class="fas fa-power-off"></i>
+          </li>
+          <li class="mainTaskbar__list-icons arrows" id="full">
+            <i class=" full fas fa-expand" id="arrow"></i>
+          </li>
+          <li
+            onclick="window.open('https://github.com/pareen89', '_blank')"
+            class="mainTaskbar__list-icons github"
+          >
+            <i class="fab fa-github"></i>
+          </li>
+          <li
+            onclick="window.open('https://www.linkedin.com/in/pareen-patel/', '_blank')"
+            class="mainTaskbar__list-icons linkedin"
+          >
+            <i class="fab fa-linkedin"></i>
+          </li>
+          <li class="mainTaskbar__list-icons email">
+            <i class="fas fa-envelope"></i>
+          </li>
+          <li
+            onclick="window.open('https://codepen.io/pareen95123/', '_blank')"
+            class="mainTaskbar__list-icons codepen"
+          >
+            <i class="fab fa-codepen"></i>
+          </li>
+          <li class="mainTaskbar__list-icons paint desktop">
+            <i class="fas fa-palette"></i>
+          </li>
+          <li id="clickedFolder" class="mainTaskbar__list-icons clicked">
+            <i class="fas fa-folder-open folder"></i>
+          </li>
+          <li id="clickedFile" class="mainTaskbar__list-icons clicked">
+            <i class="fas fa-file file"></i>
+          </li>
+        </ul>
+        <!--Right Side of Taskebar-->
+        <ul class="timedate bottom">
+          <li class="timedate__list time">
+            <p id="time1"></p>
+            <p id="date1"></p>
+          </li>
+          <li class="timedate__list icon" id="icon">
+            <i class="far fa-comment-alt"></i>
+          </li>
+        </ul>
+      </section>
+      <!--Notification Number for taskbar-->
+      <div id="notification">
+        <p>1</p>
+      </div>
+      <!----------------------------------->
+      <!-------------Start Menu------------>
+      <!----------------------------------->
       <section id="startMenu" class="startMenu">
         <div class="startMenu__power">
           <i class="fas fa-power-off power"></i>
@@ -94,125 +104,199 @@
               A
             </li>
             <li class="display__item display__itemHoverStartMenuColor">
-              <i class="fas fa-info-circle display__item-icon display__item-iconStartMenuBackgroundColor"></i>
-              <p class="display__item-name display__item-nameStartMenuColor">About Me</p>
+              <i
+                class="fas fa-info-circle display__item-icon display__item-iconStartMenuBackgroundColor"
+              ></i>
+              <p class="display__item-name display__item-nameStartMenuColor">
+                About Me
+              </p>
             </li>
             <li class="display__title display__titleHoverStartMenuColor">
               C
             </li>
             <li class="display__item display__itemHoverStartMenuColor">
-              <i class="fas fa-calculator display__item-icon display__item-iconStartMenuBackgroundColor"></i>
-              <p class="display__item-name display__item-nameStartMenuColor">Calculator</p>
+              <i
+                class="fas fa-calculator display__item-icon display__item-iconStartMenuBackgroundColor"
+              ></i>
+              <p class="display__item-name display__item-nameStartMenuColor">
+                Calculator
+              </p>
             </li>
             <li class="display__item display__itemHoverStartMenuColor">
-              <i class="fab fa-codepen codepen display__item-icon display__item-iconStartMenuBackgroundColor"></i>
-              <p class="display__item-name display__item-nameStartMenuColor">CodePen</p>
+              <i
+                class="fab fa-codepen codepen display__item-icon display__item-iconStartMenuBackgroundColor"
+              ></i>
+              <p class="display__item-name display__item-nameStartMenuColor">
+                CodePen
+              </p>
             </li>
             <li class="display__title display__titleHoverStartMenuColor">
               G
             </li>
             <li class="display__item display__itemHoverStartMenuColor">
-              <i class="fab fa-github github display__item-icon display__item-iconStartMenuBackgroundColor"></i>
-              <p class="display__item-name display__item-nameStartMenuColor">Github</p>
+              <i
+                class="fab fa-github github display__item-icon display__item-iconStartMenuBackgroundColor"
+              ></i>
+              <p class="display__item-name display__item-nameStartMenuColor">
+                Github
+              </p>
             </li>
             <li class="display__title display__titleHoverStartMenuColor">
               l
             </li>
             <li class="display__item display__itemHoverStartMenuColor">
-              <i class="fab fa-linkedin linkedin display__item-icon display__item-iconStartMenuBackgroundColor"></i>
-              <p class="display__item-name display__item-nameStartMenuColor">LinkedIn</p>
+              <i
+                class="fab fa-linkedin linkedin display__item-icon display__item-iconStartMenuBackgroundColor"
+              ></i>
+              <p class="display__item-name display__item-nameStartMenuColor">
+                LinkedIn
+              </p>
             </li>
             <li class="display__title display__titleHoverStartMenuColor">
               n
             </li>
             <li class="display__item display__itemHoverStartMenuColor">
-              <i class="fas fa-pen-square display__item-icon display__item-iconStartMenuBackgroundColor"></i>
-              <p class="display__item-name display__item-nameStartMenuColor">Notepad</p>
+              <i
+                class="fas fa-pen-square display__item-icon display__item-iconStartMenuBackgroundColor"
+              ></i>
+              <p class="display__item-name display__item-nameStartMenuColor">
+                Notepad
+              </p>
             </li>
             <li class="display__title display__titleHoverStartMenuColor">
               p
             </li>
             <li class="display__item display__itemHoverStartMenuColor">
-              <i class="fas fa-palette paint display__item-icon display__item-iconStartMenuBackgroundColor"></i>
-              <p class="display__item-name display__item-nameStartMenuColor">Paint</p>
+              <i
+                class="fas fa-palette paint display__item-icon display__item-iconStartMenuBackgroundColor"
+              ></i>
+              <p class="display__item-name display__item-nameStartMenuColor">
+                Paint
+              </p>
             </li>
             <li class="display__item display__itemHoverStartMenuColor">
-              <i class="fas fa-folder-open folder display__item-icon display__item-iconStartMenuBackgroundColor"></i>
-              <p class="display__item-name display__item-nameStartMenuColor">Projects</p>
+              <i
+                class="fas fa-folder-open folder display__item-icon display__item-iconStartMenuBackgroundColor"
+              ></i>
+              <p class="display__item-name display__item-nameStartMenuColor">
+                Projects
+              </p>
             </li>
             <li class="display__title display__titleHoverStartMenuColor">
               r
             </li>
             <li class="display__item display__itemHoverStartMenuColor">
-              <i class="fas fa-file file display__item-icon display__item-iconStartMenuBackgroundColor"></i>
-              <p class="display__item-name display__item-nameStartMenuColor">Resume</p>
+              <i
+                class="fas fa-file file display__item-icon display__item-iconStartMenuBackgroundColor"
+              ></i>
+              <p class="display__item-name display__item-nameStartMenuColor">
+                Resume
+              </p>
             </li>
           </ul>
         </div>
       </section>
-    </div>
-
-    <!----------------------------------->
-    <!---------------About--------------->
-    <!----------------------------------->
-    <section id="aboutme" class="aboutme">
-
-    </section>
-    <!----------------------------------->
-    <!--------------Folders-------------->
-    <!----------------------------------->
-    <section class="folders">
-      <ul class="folders__list">
-        <li class="folders__list-items" id="resumeFile">
-          <i class="fas fa-file file folders__list-items-folder"></i>
-          <p class="folders__list-items-title">Resume</p>
-        </li>
-        <li class="folders__list-items" id="projectsFolder">
-          <i class="fas fa-folder-open folder folders__list-items-folder"></i>
-          <p class="folders__list-items-title">Projects</p>
-        </li>
-      </ul>
-    </section>
-    <!----------------------------------->
-    <!---------Projects Folder----------->
-    <!----------------------------------->
-    <div id="place">
+      <!----------------------------------->
+      <!---------------About--------------->
+      <!----------------------------------->
+      <section id="aboutme" class="aboutme"></section>
+      <!----------------------------------->
+      <!---------DeskTop Folders----------->
+      <!----------------------------------->
+      <section class="folders">
+        <ul class="folders__list">
+          <li class="folders__list-items" id="resumeFile">
+            <i class="fas fa-file file folders__list-items-folder"></i>
+            <p class="folders__list-items-title">Resume</p>
+          </li>
+          <li class="folders__list-items" id="projectsFolder">
+            <i class="fas fa-folder-open folder folders__list-items-folder"></i>
+            <p class="folders__list-items-title">Projects</p>
+          </li>
+        </ul>
+      </section>
+      <!----------------------------------->
+      <!----------Mobile Folders----------->
+      <!----------------------------------->
+      <section class="mobile">
+        <div id="mobileProjects" class="mobile__folder">
+          <i class="fas fa-folder-open folder mobile__folder-icon"></i>
+          <p class="mobile__folder-name">Projects</p>
+        </div>
+        <div class="mobile__folder">
+          <i class="fas fa-file file mobile__folder-icon"></i>
+          <p class="mobile__folder-name">Resume</p>
+        </div>
+        <div class="mobile__folder">
+          <i class="fas fa-palette paint mobile__folder-icon"></i>
+          <p class="mobile__folder-name">Paint</p>
+        </div>
+        <div class="mobile__folder">
+          <i class="fas fa-pen-square notepad mobile__folder-icon"></i>
+          <p class="mobile__folder-name">Notepad</p>
+        </div>
+        <div class="mobile__folder">
+          <i class="fas fa-calculator calculator mobile__folder-icon"></i>
+          <p class="mobile__folder-name">Calculator</p>
+        </div>
+      </section>
+      <!----------------------------------->
+      <!---------Projects Folder----------->
+      <!----------------------------------->
       <section id="projects" class="projects">
+        <!--For CSS the topbar will be under the topbar section-->
         <div class="topbar">
           <p class="topbar-title">Projects</p>
           <div class="topbar-icons">
-            <i id="minProjectFolder" class="topbar-icons-details  topbar-icons-minus fas fa-minus"></i>
-            <i class="topbar-icons-details  topbar-icons-square far fa-square"></i>
-            <i id="closeProjectFolder" class="topbar-icons-details  topbar-icons-close fas fa-times"></i>
+            <i
+              id="minProjectFolder"
+              class="topbar-icons-details  topbar-icons-minus fas fa-minus"
+            ></i>
+            <i
+              class="topbar-icons-details  topbar-icons-square far fa-square"
+            ></i>
+            <i
+              id="closeProjectFolder"
+              class="topbar-icons-details  topbar-icons-close fas fa-times"
+            ></i>
           </div>
         </div>
         <div class="projects__section">
           <div class="projects__section-folders scroll">
+            <!--For CSS will be under the display section-->
             <ul class="display">
               <li class="display__item display__itemHoverProjectsColor">
-                <i class="fas fa-car car display__item-icon display__item-iconProjectsBackgroundColor"></i>
-                <p class="display__item-name display__item-nameProjectsColor">ParkingList</p>
+                <i
+                  class="fas fa-car car display__item-icon display__item-iconProjectsBackgroundColor"
+                ></i>
+                <p class="display__item-name display__item-nameProjectsColor">
+                  ParkingList
+                </p>
               </li>
               <li class="display__item display__itemHoverProjectsColor">
-                <i class="fas fa-user-circle profile display__item-icon display__item-iconProjectsBackgroundColor"></i>
-                <p class="display__item-name display__item-nameProjectsColor">Portfolio (New)</p>
+                <i
+                  class="fas fa-user-circle profile display__item-icon display__item-iconProjectsBackgroundColor"
+                ></i>
+                <p class="display__item-name display__item-nameProjectsColor">
+                  Portfolio (New)
+                </p>
               </li>
               <li class="display__item display__itemHoverProjectsColor">
-                <i class="fas fa-user-circle profile2 display__item-icon display__item-iconProjectsBackgroundColor"></i>
-                <p class="display__item-name display__item-nameProjectsColor">Portfolio (Old)</p>
+                <i
+                  class="fas fa-user-circle profile2 display__item-icon display__item-iconProjectsBackgroundColor"
+                ></i>
+                <p class="display__item-name display__item-nameProjectsColor">
+                  Portfolio (Old)
+                </p>
               </li>
             </ul>
           </div>
           <div class="projects__section-project scroll">
-            <div id="parkinglist" class="project">
-
-            </div>
+            <div id="parkinglist" class="project"></div>
           </div>
         </div>
       </section>
-    </div>
-  </main>
-  <script src="js/main.js"></script>
-</body>
-
+    </main>
+    <script src="js/main.js"></script>
+  </body>
 </html>
