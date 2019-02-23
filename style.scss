@@ -68,7 +68,6 @@ $breakpoint:
   box-sizing: border-box;
   cursor: context-menu;
   user-select: none;
-
 }
 
 html {
@@ -351,6 +350,10 @@ body {
 .startMenu-toggle {
   bottom: 4.2rem;
   display: initial;
+
+  @include respond(phone) {
+    display: none;
+  }
 }
 
 
@@ -521,14 +524,27 @@ body {
     width: 100%;
     height: calc(100% - 3rem);
 
+    @include respond(phone) {
+      grid-template-columns: 100vw;
+      grid-template-rows: 3rem calc(100vh - 3rem);
+      overflow: hidden;
+    }
+
     &-folders {
       border-right: 0.15rem solid #f4f4f4;
       overflow: hidden;
+
+      @include respond(phone) {
+        width: 100vw;
+        height: 6.5rem;
+      }
     }
 
     &-project {
       overflow: hidden;
       padding: 0.5rem 0.35rem 0.5rem 0.5rem;
+
+      @include respond(phone) {}
 
       .project {
         height: 100%;
@@ -626,6 +642,11 @@ body {
     grid-template-rows: 1fr;
     transition: all 0.1s ease-in-out;
 
+    @include respond(phone) {
+      padding: 0 0.50rem;
+      grid-template-columns: 1fr 1fr;
+    }
+
     &-icon {
       font-size: 2rem;
       grid-column: 1/2;
@@ -637,6 +658,10 @@ body {
       padding-top: 0.5rem;
       padding-left: 0.5rem;
 
+      @include respond(phone) {
+
+        justify-self: start;
+      }
     }
 
     &-iconStartMenuBackgroundColor {
@@ -653,6 +678,10 @@ body {
       align-self: center;
       justify-self: start;
       padding-left: 1rem;
+
+      @include respond(phone) {
+        justify-self: end;
+      }
     }
 
     &-nameStartMenuColor {
@@ -666,6 +695,10 @@ body {
 
   &__itemHoverProjectsColor:hover {
     background-color: rgba(125, 125, 125, 0.5);
+
+    @include respond(phone) {
+      background-color: transparent;
+    }
   }
 
 }
@@ -729,6 +762,57 @@ body {
 //****************************//
 //        Scroll bar          //
 //****************************//
+@include respond(phone) {
+  .scroll {
+    transition: all 0.2s ease-in-out;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+      width: 2px;
+      height: 2px;
+    }
+
+    &::-webkit-scrollbar-button {
+      width: 0px;
+      height: 0px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #e1e1e1;
+      border: 0px none #ffffff;
+      border-radius: 50px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #ffffff;
+    }
+
+    &::-webkit-scrollbar-thumb:active {
+      background: #000000;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+      border: 0px none #ffffff;
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-track:hover {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-track:active {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-corner {
+      background: transparent;
+    }
+
+  }
+}
+
 .scroll {
   transition: all 0.2s ease-in-out;
 

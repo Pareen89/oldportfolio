@@ -19,6 +19,7 @@ let projects = document.getElementById("projects");
 let clickedFile = document.getElementById("clickedFile");
 let clickedFolder = document.getElementById("clickedFolder");
 let minProjectFolder = document.getElementById("minProjectFolder");
+let mobileProjects = document.getElementById('mobileProjects');
 /////////////////////////////////////////////
 //////////////////Start Menu ///////////////
 ///////////////////////////////////////////
@@ -130,7 +131,7 @@ window.addEventListener("mouseup", function (event) {
 /////////////Folder Functions///////////////
 ///////////////////////////////////////////
 
-// Project Folder
+// Project Folder (desktop version)
 projectsFolder.addEventListener("dblclick", function () {
   projects.style.display = "inherit";
   clickedFolder.style.display = "inherit";
@@ -152,5 +153,13 @@ clickedFolder.addEventListener("click", function () {
   } else {
     projects.style.display = "none";
     clickedFolder.style.backgroundColor = "transparent";
+  }
+});
+// Projects Folder (mobile)
+mobileProjects.addEventListener("click", function () {
+  if (projects.style.display == "none") {
+    projects.style.display = "inherit";
+  } else {
+    projects.style.display = "none";
   }
 });
