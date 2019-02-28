@@ -1,0 +1,744 @@
+/*
+@ - 600px:    Phone
+600 - 900px:  Tablet Portrait
+900 - 1200px:  Tablet LandScape
+[1200 - 1800px:]  Normal Style
+1800+       :  Big Desktop
+
+$breakpoint:
+-phone
+-tab-port
+-tab-land
+-big-desktop
+*/
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff; }
+  to {
+    text-shadow: 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff, 0 0 80px #fff, 0 0 90px #fff, 0 0 100px #fff; } }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  cursor: context-menu;
+  user-select: none; }
+
+@media only screen and (max-width: 75em) {
+  .scroll {
+    transition: all 0.2s ease-in-out;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-color: transparent transparent;
+    scrollbar-width: thin; }
+    .scroll::-webkit-scrollbar {
+      width: 2px;
+      height: 2px; }
+    .scroll::-webkit-scrollbar-button {
+      width: 0px;
+      height: 0px; }
+    .scroll::-webkit-scrollbar-thumb {
+      background: #e1e1e1;
+      border: 0px none #ffffff;
+      border-radius: 50px; }
+    .scroll::-webkit-scrollbar-thumb:hover {
+      background: #ffffff; }
+    .scroll::-webkit-scrollbar-thumb:active {
+      background: #000000; }
+    .scroll::-webkit-scrollbar-track {
+      background: transparent;
+      border: 0px none #ffffff;
+      border-radius: 5px; }
+    .scroll::-webkit-scrollbar-track:hover {
+      background: transparent; }
+    .scroll::-webkit-scrollbar-track:active {
+      background: transparent; }
+    .scroll::-webkit-scrollbar-corner {
+      background: transparent; } }
+
+.scroll {
+  transition: all 0.2s ease-in-out;
+  scrollbar-color: transparent transparent;
+  scrollbar-width: thin; }
+  .scroll:hover {
+    overflow-y: scroll;
+    overflow-x: hidden; }
+    .scroll:hover::-webkit-scrollbar {
+      width: 2px;
+      height: 2px; }
+    .scroll:hover::-webkit-scrollbar-button {
+      width: 0px;
+      height: 0px; }
+    .scroll:hover::-webkit-scrollbar-thumb {
+      background: #e1e1e1;
+      border: 0px none #ffffff;
+      border-radius: 50px; }
+    .scroll:hover::-webkit-scrollbar-thumb:hover {
+      background: #ffffff; }
+    .scroll:hover::-webkit-scrollbar-thumb:active {
+      background: #000000; }
+    .scroll:hover::-webkit-scrollbar-track {
+      background: transparent;
+      border: 0px none #ffffff;
+      border-radius: 5px; }
+    .scroll:hover::-webkit-scrollbar-track:hover {
+      background: transparent; }
+    .scroll:hover::-webkit-scrollbar-track:active {
+      background: transparent; }
+    .scroll:hover::-webkit-scrollbar-corner {
+      background: transparent; }
+
+.scroll-two {
+  transition: all 0.2s ease-in-out;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-color: transparent transparent;
+  scrollbar-width: thin; }
+  .scroll-two::-webkit-scrollbar {
+    width: 2px;
+    height: 2px; }
+  .scroll-two::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px; }
+  .scroll-two::-webkit-scrollbar-thumb {
+    background: #e1e1e1;
+    border: 0px none #ffffff;
+    border-radius: 50px; }
+  .scroll-two::-webkit-scrollbar-thumb:hover {
+    background: #ffffff; }
+  .scroll-two::-webkit-scrollbar-thumb:active {
+    background: #000000; }
+  .scroll-two::-webkit-scrollbar-track {
+    background: transparent;
+    border: 0px none #ffffff;
+    border-radius: 5px; }
+  .scroll-two::-webkit-scrollbar-track:hover {
+    background: transparent; }
+  .scroll-two::-webkit-scrollbar-track:active {
+    background: transparent; }
+  .scroll-two::-webkit-scrollbar-corner {
+    background: transparent; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
+
+@media only screen and (max-width: 75em) {
+  .folders {
+    display: none; } }
+
+.folders__list {
+  list-style-type: none;
+  text-align: center;
+  padding: 1rem 1rem;
+  z-index: 2; }
+  .folders__list-items {
+    margin-bottom: 3rem;
+    width: 6rem;
+    height: 6.5rem; }
+    @media only screen and (max-width: 75em) {
+      .folders__list-items {
+        border-radius: 1rem;
+        background-color: rgba(255, 255, 255, 0.6) !important;
+        width: 5rem;
+        height: 5rem;
+        padding: 1rem 0.5rem;
+        margin: 0rem 1rem 5rem 0rem; } }
+    .folders__list-items:hover {
+      background-color: rgba(255, 255, 255, 0.6); }
+    .folders__list-items-folder {
+      font-size: 4rem; }
+      @media only screen and (max-width: 75em) {
+        .folders__list-items-folder {
+          font-size: 3rem; } }
+    .folders__list-items-title {
+      font-size: 1.3rem;
+      color: white;
+      cursor: context-menu;
+      user-select: none; }
+      @media only screen and (max-width: 75em) {
+        .folders__list-items-title {
+          padding-top: 1.2rem;
+          margin-left: -0.2rem;
+          font-size: 1.2rem; } }
+
+.clicked {
+  display: none;
+  border-bottom: 0.3rem solid #6969ff; }
+  @media only screen and (max-width: 75em) {
+    .clicked {
+      display: none !important; } }
+
+.mobile {
+  display: none; }
+
+@media only screen and (max-width: 75em) {
+  .mobile {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    height: calc(100vh - 12.3rem);
+    width: 100vw;
+    color: white; } }
+  @media only screen and (max-width: 75em) and (max-width: 56.25em) {
+    .mobile {
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(6, 1fr); } }
+  @media only screen and (max-width: 75em) and (max-width: 37.5em) {
+    .mobile {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(5, 1fr); } }
+
+@media only screen and (max-width: 75em) {
+    .mobile__folder {
+      height: 5rem;
+      width: 5rem;
+      border-radius: 1rem;
+      background-color: rgba(125, 125, 125, 0.5);
+      justify-self: center;
+      align-self: center;
+      text-align: center; }
+      .mobile__folder-icon {
+        font-size: 3.5rem;
+        line-height: 5rem; }
+      .mobile__folder-name {
+        font-size: 1.2rem;
+        color: white; } }
+
+.display {
+  list-style-type: none;
+  font-size: 1.3rem; }
+  .display__title {
+    height: 3.5rem;
+    display: grid;
+    grid-template-columns: 3.5rem 20rem;
+    grid-template-rows: 1fr;
+    transition: all 0.1s ease-in-out;
+    text-transform: uppercase;
+    padding: 0.5rem;
+    cursor: context-menu;
+    user-select: none; }
+  .display__titleHoverStartMenuColor:hover {
+    background-color: rgba(125, 125, 125, 0.5); }
+    @media only screen and (max-width: 75em) {
+      .display__titleHoverStartMenuColor:hover {
+        background-color: transparent; } }
+  .display__titleHoverProjectColor:hover {
+    background-color: rgba(125, 125, 125, 0.5); }
+    @media only screen and (max-width: 75em) {
+      .display__titleHoverProjectColor:hover {
+        background-color: transparent; } }
+  .display__item {
+    height: 3.5rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 3.5rem 1fr;
+    grid-template-rows: 1fr;
+    column-gap: 1rem;
+    transition: all 0.1s ease-in-out; }
+    @media only screen and (max-width: 37.5em) {
+      .display__item {
+        padding: 0 0.5rem; } }
+    .display__item-icon {
+      font-size: 2rem;
+      grid-column: 1/2;
+      grid-row: 1/2;
+      align-self: center;
+      justify-self: center;
+      height: 3rem;
+      width: 3rem;
+      padding-top: 0.5rem;
+      padding-left: 0.5rem; }
+      @media only screen and (max-width: 37.5em) {
+        .display__item-icon {
+          justify-self: center; } }
+    .display__item-iconStartMenuBackgroundColor {
+      background-color: dodgerblue; }
+    .display__item-iconProjectsBackgroundColor {
+      background-color: rgba(0, 0, 0, 0.8); }
+    .display__item-name {
+      grid-column: 2/3;
+      grid-row: 1/2;
+      align-self: center;
+      justify-self: start; }
+      @media only screen and (max-width: 37.5em) {
+        .display__item-name {
+          justify-self: start; } }
+    .display__item-nameStartMenuColor {
+      color: white; }
+  .display__itemHoverStartMenuColor:hover {
+    background-color: rgba(125, 125, 125, 0.5); }
+    @media only screen and (max-width: 75em) {
+      .display__itemHoverStartMenuColor:hover {
+        background-color: transparent; } }
+  .display__itemHoverProjectsColor:hover {
+    background-color: rgba(125, 125, 125, 0.5); }
+    @media only screen and (max-width: 75em) {
+      .display__itemHoverProjectsColor:hover {
+        background-color: transparent; } }
+    @media only screen and (max-width: 75em) {
+      .display__itemHoverProjectsColor:hover {
+        background-color: transparent; } }
+
+.calculator {
+  color: orange; }
+
+.car {
+  color: white; }
+
+.codepen {
+  color: #787878; }
+
+.compress {
+  display: none; }
+
+.file {
+  color: #ece3e3; }
+
+.folder {
+  color: #ffd097; }
+
+.github {
+  color: #446cb3; }
+
+.linkedin {
+  color: #0077b5; }
+
+.notepad {
+  color: skyblue; }
+
+.paint {
+  color: #e67e22; }
+
+.profile {
+  color: #17ea99; }
+
+.profile2 {
+  color: #207b7b; }
+
+.topTaskbar {
+  display: none; }
+  @media only screen and (max-width: 75em) {
+    .topTaskbar {
+      display: grid;
+      grid-row: 1/2; } }
+
+.topTaskbar,
+.mainTaskbar {
+  height: 4.15rem;
+  width: 100vw;
+  background-color: rgba(12, 12, 12, 0.8);
+  grid-template-columns: 80vw 20vw;
+  grid-template-rows: 1fr;
+  overflow: hidden; }
+  @media only screen and (max-width: 75em) {
+    .topTaskbar,
+    .mainTaskbar {
+      grid-template-columns: 1fr; } }
+
+.mainTaskbar {
+  grid-row: 12/13;
+  grid-column: 1/13;
+  display: grid;
+  align-self: end;
+  position: absolute;
+  bottom: 0; }
+  @media only screen and (max-width: 75em) {
+    .mainTaskbar {
+      height: 8rem; } }
+  .mainTaskbar__list {
+    display: flex;
+    list-style-type: none;
+    align-self: center; }
+    @media only screen and (max-width: 75em) {
+      .mainTaskbar__list {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 1fr; } }
+    @media only screen and (max-width: 56.25em) {
+      .mainTaskbar__list {
+        grid-template-columns: repeat(5, 1fr); } }
+    @media only screen and (max-width: 37.5em) {
+      .mainTaskbar__list {
+        grid-template-columns: repeat(4, 1fr); } }
+    .mainTaskbar__list-icons {
+      color: white;
+      font-size: 2rem;
+      padding: 0.75rem 1.5rem;
+      transition: all 0.3s ease-in-out; }
+      @media only screen and (max-width: 75em) {
+        .mainTaskbar__list-icons {
+          height: 5rem;
+          width: 5rem;
+          background-color: rgba(125, 125, 125, 0.5);
+          padding: 0;
+          border-radius: 1rem;
+          font-size: 3rem;
+          justify-self: center;
+          align-self: center;
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr; }
+          .mainTaskbar__list-icons i {
+            justify-self: center;
+            align-self: center; } }
+      .mainTaskbar__list-icons:hover {
+        background-color: #282828; }
+        @media only screen and (max-width: 75em) {
+          .mainTaskbar__list-icons:hover {
+            background-color: rgba(125, 125, 125, 0.5); } }
+    @media only screen and (max-width: 37.5em) {
+      .mainTaskbar__list .windows {
+        display: none; } }
+    .mainTaskbar__list .windows:hover {
+      color: dodgerblue; }
+    @media only screen and (max-width: 56.25em) {
+      .mainTaskbar__list .full {
+        display: none; } }
+    @media only screen and (max-width: 37.5em) {
+      .mainTaskbar__list .desktop {
+        display: none; } }
+
+.timedate {
+  grid-column: 2/13;
+  display: none;
+  list-style-type: none;
+  color: white;
+  align-self: center;
+  justify-self: end;
+  text-align: center; }
+  @media only screen and (max-width: 75em) {
+    .timedate {
+      display: grid;
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr;
+      height: 4.15rem;
+      width: 100vw; } }
+  .timedate__list {
+    padding: 0.45rem 1.5rem;
+    transition: all 0.3s ease-in-out;
+    user-select: none; }
+  .timedate .time {
+    font-size: 1.2rem; }
+    .timedate .time:hover {
+      background-color: #282828; }
+      @media only screen and (max-width: 75em) {
+        .timedate .time:hover {
+          background-color: transparent; } }
+    @media only screen and (max-width: 75em) {
+      .timedate .time {
+        font-size: 1.4rem;
+        padding-top: 1rem; } }
+  @media only screen and (max-width: 75em) {
+    .timedate #date {
+      display: none; } }
+  .timedate .icon {
+    font-size: 2rem; }
+    .timedate .icon:hover {
+      background-color: #282828; }
+      @media only screen and (max-width: 75em) {
+        .timedate .icon:hover {
+          background-color: transparent; } }
+
+.bottom {
+  display: flex; }
+  @media only screen and (max-width: 75em) {
+    .bottom {
+      display: none; } }
+
+.top {
+  display: grid; }
+  @media only screen and (max-width: 75em) {
+    .top {
+      grid-column: 1/13; } }
+
+.center {
+  justify-self: center;
+  grid-row: 1/2;
+  grid-column: 1/2; }
+
+.right {
+  justify-self: end;
+  grid-row: 1/2;
+  grid-column: 1/2; }
+
+#notification {
+  font-size: 1.2rem;
+  color: red;
+  font-weight: bold;
+  position: absolute;
+  right: 2.15rem;
+  bottom: 1.65rem;
+  animation: glow 1s ease-in-out infinite alternate;
+  cursor: context-menu; }
+  @media only screen and (max-width: 75em) {
+    #notification {
+      top: 0.85rem; } }
+
+.topbar {
+  height: 3rem;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  border-bottom: 0.15rem solid #f4f4f4;
+  overflow: hidden; }
+  .topbar-icons {
+    position: absolute;
+    right: 0; }
+    .topbar-icons-details {
+      font-size: 1.4rem;
+      padding: 0.85rem 1.8rem;
+      color: #414040; }
+    @media only screen and (max-width: 75em) {
+      .topbar-icons-minus, .topbar-icons-square {
+        display: none; } }
+    .topbar-icons-minus:hover, .topbar-icons-square:hover {
+      color: black;
+      background-color: rgba(120, 120, 120, 0.5); }
+    .topbar-icons-close:hover {
+      color: white;
+      background-color: red; }
+  .topbar-title {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+    cursor: context-menu;
+    user-select: none; }
+
+.aboutme {
+  width: 38rem;
+  height: calc(100vh - 4.15rem);
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  right: -39.5rem;
+  display: none;
+  z-index: 999; }
+  @media only screen and (max-width: 37.5em) {
+    .aboutme {
+      height: calc(100vh - 8.3rem);
+      width: 100vw; } }
+
+.aboutme-toggle {
+  display: initial;
+  right: 0; }
+
+.startMenu {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  bottom: -46rem;
+  height: 50rem;
+  width: 32rem;
+  display: none;
+  z-index: 999;
+  transition: all 0.2s ease-in-out; }
+  @media only screen and (max-width: 37.5em) {
+    .startMenu {
+      display: none; } }
+  .startMenu__power {
+    height: 100%;
+    width: 4.7rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr; }
+    .startMenu__power .power {
+      font-size: 2rem;
+      justify-self: center;
+      align-self: end;
+      padding: 1.2rem 1.38rem;
+      transition: all 0.3s ease-in-out;
+      color: white; }
+      .startMenu__power .power:hover {
+        background-color: #282828; }
+  .startMenu__programs {
+    height: 50rem;
+    width: 27.21rem;
+    position: absolute;
+    padding-left: 1.5rem;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    color: #f4f4f4; }
+
+.startMenu-toggle {
+  bottom: 4.2rem;
+  display: initial; }
+  @media only screen and (max-width: 75em) {
+    .startMenu-toggle {
+      bottom: 8rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .startMenu-toggle {
+      display: none; } }
+
+.background {
+  background-image: url("../img/bg.jpg");
+  background-color: black;
+  height: auto !important;
+  min-height: 100vh;
+  width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.projects {
+  height: calc(100vh - 4.15rem);
+  background-color: white;
+  width: 100vw;
+  z-index: 900;
+  position: absolute;
+  top: 0;
+  overflow: hidden; }
+  @media only screen and (max-width: 75em) {
+    .projects {
+      height: 100vh; } }
+  .projects__folder {
+    display: grid;
+    grid-template-columns: 25vw 75vw;
+    grid-template-rows: 1fr;
+    height: calc(100vh - 7.15rem);
+    width: 100vw;
+    overflow: hidden; }
+    @media only screen and (max-width: 75em) {
+      .projects__folder {
+        height: calc(100vh - 3rem); } }
+    @media only screen and (max-width: 37.5em) {
+      .projects__folder {
+        grid-template-columns: 100vh;
+        grid-template-rows: 6rem 1fr; } }
+    .projects__folder-left {
+      width: 100%;
+      overflow: hidden;
+      grid-column: 1/2;
+      grid-row: 1/2;
+      border-right: 0.2rem solid #f4f4f4; }
+      @media only screen and (max-width: 37.5em) {
+        .projects__folder-left {
+          grid-column: 1/2;
+          grid-row: 1/2;
+          border-bottom: 0.2rem solid #f4f4f4; } }
+    .projects__folder-right {
+      grid-column: 2/3;
+      grid-row: 1/2;
+      width: 75vw; }
+      @media only screen and (max-width: 37.5em) {
+        .projects__folder-right {
+          grid-column: 1/2;
+          grid-row: 2/3;
+          width: 100vw; } }
+      .projects__folder-right .slideshow {
+        display: grid;
+        grid-template-columns: 2rem 1fr 2rem;
+        grid-template-rows: 1fr;
+        font-size: 1.5rem;
+        background-color: rgba(244, 244, 244, 0.7); }
+        @media only screen and (max-width: 37.5em) {
+          .projects__folder-right .slideshow {
+            margin-top: 2rem; } }
+        .projects__folder-right .slideshow__leftarrow {
+          grid-column: 1/2;
+          grid-row: 1/2;
+          z-index: 2;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer; }
+        .projects__folder-right .slideshow__rightarrow {
+          grid-column: 3/4;
+          grid-row: 1/2;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 2;
+          cursor: pointer; }
+        .projects__folder-right .slideshow__img {
+          grid-column: 2/3;
+          grid-row: 1/2;
+          width: calc(75vw - 4rem);
+          z-index: 1; }
+          @media only screen and (max-width: 37.5em) {
+            .projects__folder-right .slideshow__img {
+              width: 100vw; } }
+
+#projects {
+  display: none; }
+
+.resume {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  background-color: white; }
+  .resume__container {
+    height: calc(100vh - 7.15rem);
+    width: 100%;
+    display: grid;
+    grid-template-columns: 27rem 1fr; }
+    @media only screen and (max-width: 75em) {
+      .resume__container {
+        height: calc(100vh - 3rem);
+        overflow: hidden; } }
+  .resume .left {
+    grid-column: 1/2;
+    justify-self: center;
+    align-self: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+    height: 100%;
+    width: 100%;
+    background-color: #2b4c85;
+    border: 0.1rem solid black; }
+    .resume .left__img {
+      border-radius: 50%;
+      border: 0.1rem solid black;
+      width: 13rem;
+      height: 13rem;
+      grid-row: 1/2;
+      justify-self: center;
+      align-self: end; }
+    .resume .left__list {
+      list-style-type: none;
+      grid-row: 2/3;
+      justify-self: center;
+      align-self: center;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      color: white; }
+      .resume .left__list-items {
+        padding: 2.8rem 0; }
+        .resume .left__list-items a {
+          padding: 2rem;
+          cursor: pointer;
+          text-decoration: none;
+          color: white;
+          letter-spacing: 0.2rem; }
+          .resume .left__list-items a:active {
+            color: white; }
+          .resume .left__list-items a:hover {
+            color: black;
+            transition: all 0.3s ease-in-out; }
+  .resume .right {
+    border: 0.1rem solid black;
+    grid-column: 2/3; }
+    .resume .right__about {
+      padding: 11rem 5rem 5rem 5rem; }
+      .resume .right__about-name {
+        font-size: 5rem;
+        color: #2b4c85; }
+      .resume .right__about-address {
+        font-size: 2rem;
+        padding-bottom: 10rem; }
+      .resume .right__about-info {
+        font-size: 2rem;
+        padding-bottom: 10rem; }
+      .resume .right__about-icon {
+        font-size: 5rem; }
+        .resume .right__about-icon i {
+          padding-right: 5.5rem; }

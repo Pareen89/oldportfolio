@@ -1,0 +1,157 @@
+//****************************//
+//        Scroll bar          //
+//****************************//
+@include respond(tab-land) {
+    .scroll {
+        transition: all 0.2s ease-in-out;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        scrollbar-color: transparent transparent;
+        scrollbar-width: thin;
+
+        &::-webkit-scrollbar {
+            width: 2px;
+            height: 2px;
+        }
+
+        &::-webkit-scrollbar-button {
+            width: 0px;
+            height: 0px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #e1e1e1;
+            border: 0px none #ffffff;
+            border-radius: 50px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background: #ffffff;
+        }
+
+        &::-webkit-scrollbar-thumb:active {
+            background: #000000;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: transparent;
+            border: 0px none #ffffff;
+            border-radius: 5px;
+        }
+
+        &::-webkit-scrollbar-track:hover {
+            background: transparent;
+        }
+
+        &::-webkit-scrollbar-track:active {
+            background: transparent;
+        }
+
+        &::-webkit-scrollbar-corner {
+            background: transparent;
+        }
+    }
+}
+
+.scroll {
+    transition: all 0.2s ease-in-out;
+    scrollbar-color: transparent transparent;
+    scrollbar-width: thin;
+
+    &:hover {
+        overflow-y: scroll;
+        overflow-x: hidden;
+
+        &::-webkit-scrollbar {
+            width: 2px;
+            height: 2px;
+        }
+
+        &::-webkit-scrollbar-button {
+            width: 0px;
+            height: 0px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #e1e1e1;
+            border: 0px none #ffffff;
+            border-radius: 50px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background: #ffffff;
+        }
+
+        &::-webkit-scrollbar-thumb:active {
+            background: #000000;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: transparent;
+            border: 0px none #ffffff;
+            border-radius: 5px;
+        }
+
+        &::-webkit-scrollbar-track:hover {
+            background: transparent;
+        }
+
+        &::-webkit-scrollbar-track:active {
+            background: transparent;
+        }
+
+        &::-webkit-scrollbar-corner {
+            background: transparent;
+        }
+    }
+}
+
+.scroll-two {
+    transition: all 0.2s ease-in-out;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-color: transparent transparent;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+        width: 2px;
+        height: 2px;
+    }
+
+    &::-webkit-scrollbar-button {
+        width: 0px;
+        height: 0px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #e1e1e1;
+        border: 0px none #ffffff;
+        border-radius: 50px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: #ffffff;
+    }
+
+    &::-webkit-scrollbar-thumb:active {
+        background: #000000;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+        border: 0px none #ffffff;
+        border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-track:hover {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-track:active {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-corner {
+        background: transparent;
+    }
+}
