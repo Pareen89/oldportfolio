@@ -1,0 +1,110 @@
+//****************************//
+//           Resume           //
+//****************************//
+#resume {
+    position: absolute;
+    top: 0;
+}
+
+
+.resume {
+    background-color: white;
+    width: 100vw;
+
+    &__container {
+        height: calc(100vh - 7.15rem);
+        width: 100%;
+        display: grid;
+        grid-template-columns: 27rem 1fr;
+
+        @include respond(tab-land) {
+            height: calc(100vh - 3rem);
+            overflow: hidden;
+        }
+    }
+
+    .left {
+        grid-column: 1/2;
+        justify-self: center;
+        align-self: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr;
+        height: 100%;
+        width: 100%;
+        background-color: rgb(43, 76, 133);
+
+        &__img {
+            border-radius: 50%;
+            border: 0.1rem solid black;
+            width: 13rem;
+            height: 13rem;
+            grid-row: 1/2;
+            justify-self: center;
+            align-self: end;
+        }
+
+        &__list {
+            list-style-type: none;
+            grid-row: 2/3;
+            justify-self: center;
+            align-self: center;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+
+            &-items {
+                padding: 2.8rem 0;
+
+                a {
+                    padding: 2rem;
+                    cursor: pointer;
+                    text-decoration: none;
+                    color: white;
+                    letter-spacing: 0.2rem;
+
+                    &:active {
+                        color: white;
+                    }
+
+                    &:hover {
+                        color: black;
+                        transition: all 0.3s ease-in-out;
+                    }
+                }
+            }
+        }
+    }
+
+    .right {
+        grid-column: 2/3;
+
+        &__about {
+            padding: 11rem 5rem 5rem 5rem;
+
+            &-name {
+                font-size: 5rem;
+                color: rgb(43, 76, 133);
+            }
+
+            &-address {
+                font-size: 2rem;
+                padding-bottom: 10rem;
+            }
+
+            &-info {
+                font-size: 2rem;
+                padding-bottom: 10rem;
+            }
+
+            &-icon {
+                font-size: 5rem;
+
+                i {
+                    padding-right: 5.5rem;
+                }
+            }
+        }
+    }
+}

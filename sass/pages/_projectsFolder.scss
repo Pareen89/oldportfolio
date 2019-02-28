@@ -1,0 +1,111 @@
+//****************************//
+//        Project Folders     //
+//****************************//
+.projects {
+    height: calc(100vh - 4.15rem);
+    background-color: white;
+    width: 100vw;
+    z-index: 900;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+
+    @include respond(tab-land) {
+        height: 100vh;
+    }
+
+    &__folder {
+        display: grid;
+        grid-template-columns: 25vw 75vw;
+        grid-template-rows: 1fr;
+        height: calc(100vh - 7.15rem);
+        width: 100vw;
+        overflow: hidden;
+
+        @include respond(tab-land) {
+            height: calc(100vh - 3rem);
+        }
+
+        @include respond(phone) {
+            grid-template-columns: 100vh;
+            grid-template-rows: 6rem 1fr;
+        }
+
+        &-left {
+            width: 100%;
+            overflow: hidden;
+            grid-column: 1/2;
+            grid-row: 1/2;
+            border-right: 0.2rem solid #f4f4f4;
+
+            @include respond(phone) {
+                grid-column: 1/2;
+                grid-row: 1/2;
+                border-bottom: 0.2rem solid #f4f4f4;
+            }
+        }
+
+        &-right {
+            grid-column: 2/3;
+            grid-row: 1/2;
+            width: 75vw;
+
+            @include respond(phone) {
+                grid-column: 1/2;
+                grid-row: 2/3;
+                width: 100vw;
+            }
+
+            .slideshow {
+                display: grid;
+                grid-template-columns: 2rem 1fr 2rem;
+                grid-template-rows: 1fr;
+                font-size: 1.5rem;
+                background-color: rgba(244, 244, 244, 0.7);
+
+                @include respond(phone) {
+                    margin-top: 2rem;
+                }
+
+                &__leftarrow {
+                    grid-column: 1/2;
+                    grid-row: 1/2;
+                    z-index: 2;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                }
+
+                &__rightarrow {
+                    grid-column: 3/4;
+                    grid-row: 1/2;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 2;
+                    cursor: pointer;
+                }
+
+                &__img {
+                    grid-column: 2/3;
+                    grid-row: 1/2;
+                    width: calc(75vw - 4rem);
+                    z-index: 1;
+
+                    @include respond(phone) {
+                        width: 100vw;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#projects {
+    display: none;
+}

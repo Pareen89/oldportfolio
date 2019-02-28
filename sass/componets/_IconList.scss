@@ -1,0 +1,108 @@
+//****************************//
+//      Display Icon List     //
+//****************************//
+.display {
+    list-style-type: none;
+    font-size: 1.3rem;
+
+    &__title {
+        height: 3.5rem;
+        display: grid;
+        grid-template-columns: 3.5rem 20rem;
+        grid-template-rows: 1fr;
+        transition: all 0.1s ease-in-out;
+        text-transform: uppercase;
+        padding: 0.5rem;
+        cursor: context-menu;
+        user-select: none;
+    }
+
+    &__titleHoverStartMenuColor:hover {
+        background-color: rgba(125, 125, 125, 0.5);
+
+        @include respond(tab-land) {
+            background-color: transparent;
+        }
+    }
+
+    &__titleHoverProjectColor:hover {
+        background-color: rgba(125, 125, 125, 0.5);
+
+        @include respond(tab-land) {
+            background-color: transparent;
+        }
+    }
+
+    &__item {
+        height: 3.5rem;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 3.5rem 1fr;
+        grid-template-rows: 1fr;
+        column-gap: 1rem;
+        transition: all 0.1s ease-in-out;
+
+        @include respond(phone) {
+            padding: 0 0.5rem;
+        }
+
+        &-icon {
+            font-size: 2rem;
+            grid-column: 1/2;
+            grid-row: 1/2;
+            align-self: center;
+            justify-self: center;
+            height: 3rem;
+            width: 3rem;
+            padding-top: 0.5rem;
+            padding-left: 0.5rem;
+
+            @include respond(phone) {
+                justify-self: center;
+            }
+        }
+
+        &-iconStartMenuBackgroundColor {
+            background-color: rgb(30, 144, 255);
+        }
+
+        &-iconProjectsBackgroundColor {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        &-name {
+            grid-column: 2/3;
+            grid-row: 1/2;
+            align-self: center;
+            justify-self: start;
+
+            @include respond(phone) {
+                justify-self: start;
+            }
+        }
+
+        &-nameStartMenuColor {
+            color: white;
+        }
+    }
+
+    &__itemHoverStartMenuColor:hover {
+        background-color: rgba(125, 125, 125, 0.5);
+
+        @include respond(tab-land) {
+            background-color: transparent;
+        }
+    }
+
+    &__itemHoverProjectsColor:hover {
+        background-color: rgba(125, 125, 125, 0.5);
+
+        @include respond(tab-land) {
+            background-color: transparent;
+        }
+
+        @include respond(tab-land) {
+            background-color: transparent;
+        }
+    }
+}

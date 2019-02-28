@@ -137,6 +137,9 @@ projectsFolder.addEventListener("dblclick", function () {
   clickedFolder.style.display = "inherit";
   clickedFolder.style.background = "rgb(80, 80, 80)";
 });
+// resume file (desktop version)
+resumeFile.addEventListener('dblclick', loadResume);
+
 
 closeProjectFolder.addEventListener("click", function () {
   projects.style.display = "none";
@@ -164,20 +167,24 @@ mobileProjects.addEventListener("click", function () {
   }
 });
 
-// slideshow
-let sliderImage = document.querySelectorAll('slideshow__img');
-let arrowLeft = document.querySelector('#leftArrow');
-let arrowRight = document.querySelector('#rightArrow');
-current = 0;
 
-// clear all images
-function reset() {
-  for (let i = 0; i < sliderImage.length; i++) {
-    sliderImage[i].style.display = "none";
+function loadResume() {
+
+  clickedFile.style.display = "inherit";
+  clickedFile.style.background = "rgb(80, 80, 80)";
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', '../html/resume.html', true);
+  xhr.onload = function () {
+    if (this.status == 200) {
+      document.getElementById('resume').innerHTML = this.responseText;
+      var head = document.getElementsByTagName('head')[0];
+      script = document.createElement('script');
+      script.src = "js/resume.js";
+      head.appendChild(script);
+
+    } else {
+      document.getElementById('resume').innerHTML = 'Not Found'
+    }
   }
+  xhr.send();
 }
-
-function startSlide() {
-  reset();
-}
-startSlide();
