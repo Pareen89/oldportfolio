@@ -1159,4 +1159,134 @@ body {
 .scroll-two::-webkit-scrollbar-corner {
   background: transparent;
 }
+
+.resume {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  background-color: white;
+}
+
+.resume__container {
+  height: calc(100vh - 7.15rem);
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 27rem 1fr;
+      grid-template-columns: 27rem 1fr;
+}
+
+@media only screen and (max-width: 75em) {
+  .resume__container {
+    height: calc(100vh - 3rem);
+    overflow: hidden;
+  }
+}
+
+.resume .left {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-grid-row-align: center;
+      align-self: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr 2fr;
+      grid-template-rows: 1fr 2fr;
+  height: 100%;
+  width: 100%;
+  background-color: #2b4c85;
+  border: 0.1rem solid black;
+}
+
+.resume .left__img {
+  border-radius: 50%;
+  border: 0.1rem solid black;
+  width: 13rem;
+  height: 13rem;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
+.resume .left__list {
+  list-style-type: none;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.resume .left__list-items {
+  padding: 2.8rem 0;
+}
+
+.resume .left__list-items a {
+  padding: 2rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  letter-spacing: 0.2rem;
+}
+
+.resume .left__list-items a:active {
+  color: white;
+}
+
+.resume .left__list-items a:hover {
+  color: black;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.resume .right {
+  border: 0.1rem solid black;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+}
+
+.resume .right__about {
+  padding: 11rem 5rem 5rem 5rem;
+}
+
+.resume .right__about-name {
+  font-size: 5rem;
+  color: #2b4c85;
+}
+
+.resume .right__about-address {
+  font-size: 2rem;
+  padding-bottom: 10rem;
+}
+
+.resume .right__about-info {
+  font-size: 2rem;
+  padding-bottom: 10rem;
+}
+
+.resume .right__about-icon {
+  font-size: 5rem;
+}
+
+.resume .right__about-icon i {
+  padding-right: 5.5rem;
+}
 /*# sourceMappingURL=style.css.map */
