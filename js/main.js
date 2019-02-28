@@ -163,3 +163,21 @@ mobileProjects.addEventListener("click", function () {
     projects.style.display = "none";
   }
 });
+
+// slideshow
+let sliderImage = document.querySelectorAll('slideshow__img');
+let arrowLeft = document.querySelector('#leftArrow');
+let arrowRight = document.querySelector('#rightArrow');
+current = 0;
+
+// clear all images
+function reset() {
+  for (let i = 0; i < sliderImage.length; i++) {
+    sliderImage[i].style.display = "none";
+  }
+}
+
+function startSlide() {
+  reset();
+}
+startSlide();
