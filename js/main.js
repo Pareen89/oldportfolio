@@ -173,7 +173,7 @@ function loadResume() {
   clickedFile.style.display = "inherit";
   clickedFile.style.background = "rgb(80, 80, 80)";
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', '../html/resume.html', true);
+  xhr.open('GET', 'https://pareen89.github.io/portfolio/html/resume.html', true);
   xhr.onload = function () {
     if (this.status == 200) {
       document.getElementById('resume').innerHTML = this.responseText;

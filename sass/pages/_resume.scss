@@ -20,6 +20,7 @@
         @include respond(tab-land) {
             height: calc(100vh - 3rem);
             overflow: hidden;
+            ;
         }
     }
 
