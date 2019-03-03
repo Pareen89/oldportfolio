@@ -137,9 +137,6 @@ projectsFolder.addEventListener("dblclick", function () {
   clickedFolder.style.display = "inherit";
   clickedFolder.style.background = "rgb(80, 80, 80)";
 });
-// resume file (desktop version)
-resumeFile.addEventListener('dblclick', loadResume);
-
 
 closeProjectFolder.addEventListener("click", function () {
   projects.style.display = "none";
@@ -167,13 +164,23 @@ mobileProjects.addEventListener("click", function () {
   }
 });
 
-
+// resume file (desktop version)
+resumeFile.addEventListener('dblclick', loadResume);
+clickedFile.addEventListener('click', function () {
+  resume.style.display = "inherit";
+  clickedFile.style.backgroundColor = "inherit";
+  loadResume2();
+})
+/////////////////////////////////////////////
+///////////////////Ajax/////////////////////
+///////////////////////////////////////////
+// Ajax calls for resume file
 function loadResume() {
 
   clickedFile.style.display = "inherit";
   clickedFile.style.background = "rgb(80, 80, 80)";
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://pareen89.github.io/portfolio/html/resume.html', true);
+  xhr.open('GET', '../html/resume.html', true);
   xhr.onload = function () {
     if (this.status == 200) {
       document.getElementById('resume').innerHTML = this.responseText;
