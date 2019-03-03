@@ -19,27 +19,26 @@ let projects = document.getElementById("projects");
 let clickedFile = document.getElementById("clickedFile");
 let clickedFolder = document.getElementById("clickedFolder");
 let minProjectFolder = document.getElementById("minProjectFolder");
-let mobileProjects = document.getElementById('mobileProjects');
+let mobileProjects = document.getElementById("mobileProjects");
 /////////////////////////////////////////////
 //////////////////Start Menu ///////////////
 ///////////////////////////////////////////
-windows.addEventListener("click", function () {
-  if (startMenu.classList.contains('startMenu-toggle')) {
-    startMenu.classList.remove('startMenu-toggle');
+windows.addEventListener("click", function() {
+  if (startMenu.classList.contains("startMenu-toggle")) {
+    startMenu.classList.remove("startMenu-toggle");
   } else {
-    startMenu.classList.add('startMenu-toggle');
+    startMenu.classList.add("startMenu-toggle");
   }
 });
-
 
 /////////////////////////////////////////////
 //////////////Notification Click ///////////
 ///////////////////////////////////////////
-icon.addEventListener("click", function () {
+icon.addEventListener("click", function() {
   notification.innerHTML = "";
   aboutme.classList.toggle("aboutme-toggle");
 });
-about.addEventListener("click", function () {
+about.addEventListener("click", function() {
   notification.innerHTML = "";
   aboutme.classList.toggle("aboutme-toggle");
 });
@@ -110,18 +109,18 @@ var update = setInterval(timeAndDate, 1000);
 /////////////////////////////////////////////
 ////////////////Folder Click////////////////
 ///////////////////////////////////////////
-resumeFile.addEventListener("click", function () {
+resumeFile.addEventListener("click", function() {
   resumeFile.style.backgroundColor = "rgba(255, 255, 255, 0.6)";
 });
-projectsFolder.addEventListener("click", function () {
+projectsFolder.addEventListener("click", function() {
   projectsFolder.style.backgroundColor = "rgba(255, 255, 255, 0.6)";
 });
-window.addEventListener("mouseup", function (event) {
+window.addEventListener("mouseup", function(event) {
   if (event.target !== resumeFile) {
     resumeFile.style.backgroundColor = "transparent";
   }
 });
-window.addEventListener("mouseup", function (event) {
+window.addEventListener("mouseup", function(event) {
   if (event.target !== projectsFolder) {
     projectsFolder.style.backgroundColor = "transparent";
   }
@@ -132,21 +131,21 @@ window.addEventListener("mouseup", function (event) {
 ///////////////////////////////////////////
 
 // Project Folder (desktop version)
-projectsFolder.addEventListener("dblclick", function () {
+projectsFolder.addEventListener("dblclick", function() {
   projects.style.display = "inherit";
   clickedFolder.style.display = "inherit";
   clickedFolder.style.background = "rgb(80, 80, 80)";
 });
 
-closeProjectFolder.addEventListener("click", function () {
+closeProjectFolder.addEventListener("click", function() {
   projects.style.display = "none";
   clickedFolder.style.display = "none";
 });
-minProjectFolder.addEventListener("click", function () {
+minProjectFolder.addEventListener("click", function() {
   projects.style.display = "none";
   clickedFolder.style.backgroundColor = "transparent";
 });
-clickedFolder.addEventListener("click", function () {
+clickedFolder.addEventListener("click", function() {
   if (projects.style.display == "none") {
     projects.style.display = "inherit";
     clickedFolder.style.backgroundColor = "rgb(80, 80, 80)";
@@ -156,7 +155,7 @@ clickedFolder.addEventListener("click", function () {
   }
 });
 // Projects Folder (mobile)
-mobileProjects.addEventListener("click", function () {
+mobileProjects.addEventListener("click", function() {
   if (projects.style.display == "none") {
     projects.style.display = "inherit";
   } else {
@@ -165,33 +164,36 @@ mobileProjects.addEventListener("click", function () {
 });
 
 // resume file (desktop version)
-resumeFile.addEventListener('dblclick', loadResume);
-clickedFile.addEventListener('click', function () {
+resumeFile.addEventListener("dblclick", loadResume);
+clickedFile.addEventListener("click", function() {
   resume.style.display = "inherit";
   clickedFile.style.backgroundColor = "inherit";
   loadResume2();
-})
+});
 /////////////////////////////////////////////
 ///////////////////Ajax/////////////////////
 ///////////////////////////////////////////
 // Ajax calls for resume file
 function loadResume() {
-
   clickedFile.style.display = "inherit";
   clickedFile.style.background = "rgb(80, 80, 80)";
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', '../html/resume.html', true);
-  xhr.onload = function () {
+  xhr.open(
+    "GET",
+    // "https://pareen89.github.io/portfolio/html/resume.html",
+    "../html/resume.html",
+    true
+  );
+  xhr.onload = function() {
     if (this.status == 200) {
-      document.getElementById('resume').innerHTML = this.responseText;
-      var head = document.getElementsByTagName('head')[0];
-      script = document.createElement('script');
+      document.getElementById("resume").innerHTML = this.responseText;
+      var head = document.getElementsByTagName("head")[0];
+      script = document.createElement("script");
       script.src = "js/resume.js";
       head.appendChild(script);
-
     } else {
-      document.getElementById('resume').innerHTML = 'Not Found'
+      document.getElementById("resume").innerHTML = "Not Found";
     }
-  }
+  };
   xhr.send();
 }
