@@ -610,7 +610,7 @@ body {
         grid-template-rows: 6rem 1fr; } }
     .projects__folder-left {
       width: 100%;
-      overflow: hidden;
+      overflow: scroll;
       grid-column: 1/2;
       grid-row: 1/2;
       border-right: 0.2rem solid #f4f4f4; }
@@ -629,45 +629,33 @@ body {
           grid-row: 2/3;
           width: 100vw; } }
       .projects__folder-right .slideshow {
+        padding: 2rem 0;
         display: grid;
         grid-template-columns: 2rem 1fr 2rem;
         grid-template-rows: 1fr;
-        font-size: 1.5rem;
-        background-color: rgba(244, 244, 244, 0.7); }
-        @media only screen and (max-width: 37.5em) {
-          .projects__folder-right .slideshow {
-            margin-top: 2rem; } }
-        .projects__folder-right .slideshow__leftarrow {
+        justify-self: center; }
+        .projects__folder-right .slideshow i {
+          font-size: 1.5rem;
+          justify-self: center;
+          align-self: center;
+          padding: 2rem 0;
+          transition: all 0.3s ease-in-out;
+          cursor: pointer; }
+          .projects__folder-right .slideshow i:hover {
+            color: #868383; }
+        .projects__folder-right .slideshow__left {
           grid-column: 1/2;
-          grid-row: 1/2;
-          z-index: 2;
-          width: 100%;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer; }
-        .projects__folder-right .slideshow__rightarrow {
+          grid-row: 1/2; }
+        .projects__folder-right .slideshow__right {
           grid-column: 3/4;
-          grid-row: 1/2;
-          width: 100%;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          z-index: 2;
-          cursor: pointer; }
-        .projects__folder-right .slideshow__img {
+          grid-row: 1/2; }
+        .projects__folder-right .slideshow__image {
           grid-column: 2/3;
+          width: 100%;
+          height: auto;
           grid-row: 1/2;
-          width: calc(75vw - 4rem);
-          z-index: 1; }
-          @media only screen and (max-width: 37.5em) {
-            .projects__folder-right .slideshow__img {
-              width: 100vw; } }
-
-#projects {
-  display: none; }
+          justify-self: center;
+          align-self: center; }
 
 h1,
 h2,
