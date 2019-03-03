@@ -114,6 +114,15 @@
     }
 }
 
+.clicked {
+    display: none;
+    border-bottom: 0.3rem solid rgb(105, 105, 255);
+
+    @include respond(tab-land) {
+        display: none !important;
+    }
+}
+
 // Time, date, about
 .timedate {
     grid-column: 2/13;

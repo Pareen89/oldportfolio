@@ -164,13 +164,6 @@ body {
           margin-left: -0.2rem;
           font-size: 1.2rem; } }
 
-.clicked {
-  display: none;
-  border-bottom: 0.3rem solid #6969ff; }
-  @media only screen and (max-width: 75em) {
-    .clicked {
-      display: none !important; } }
-
 .mobile {
   display: none; }
 
@@ -400,6 +393,13 @@ body {
     @media only screen and (max-width: 37.5em) {
       .mainTaskbar__list .desktop {
         display: none; } }
+
+.clicked {
+  display: none;
+  border-bottom: 0.3rem solid #6969ff; }
+  @media only screen and (max-width: 75em) {
+    .clicked {
+      display: none !important; } }
 
 .timedate {
   grid-column: 2/13;
@@ -726,12 +726,15 @@ body {
             color: black;
             transition: all 0.3s ease-in-out; }
   .resume .right {
-    grid-column: 2/3; }
+    grid-column: 2/3;
+    overflow: scroll; }
     .resume .right__about {
-      padding: 11rem 5rem 5rem 5rem; }
+      padding: 9rem 5rem 5rem 5rem;
+      height: calc(100vh - 7.15rem); }
       .resume .right__about-name {
         font-size: 5rem;
-        color: #2b4c85; }
+        color: #2b4c85;
+        letter-spacing: 0.3rem; }
       .resume .right__about-address {
         font-size: 2rem;
         padding-bottom: 10rem; }
@@ -742,3 +745,47 @@ body {
         font-size: 5rem; }
         .resume .right__about-icon i {
           padding-right: 5.5rem; }
+    .resume .right__projects {
+      border-top: 0.1rem solid black;
+      padding: 5rem;
+      font-size: 1.8rem; }
+      .resume .right__projects-title {
+        font-size: 4rem;
+        text-transform: uppercase;
+        letter-spacing: 0.3rem; }
+      .resume .right__projects .right__project {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        padding: 2rem 0; }
+        .resume .right__projects .right__project-name {
+          font-size: 2.5rem;
+          text-transform: uppercase;
+          font-weight: 500;
+          padding: 2rem 0 0 0;
+          grid-column: 1/2;
+          grid-row: 1/2;
+          justify-self: start;
+          align-self: center; }
+          .resume .right__projects .right__project-name span {
+            padding-left: 1rem;
+            font-size: 1.8rem; }
+            .resume .right__projects .right__project-name span a {
+              cursor: pointer; }
+        .resume .right__projects .right__project-date {
+          padding: 2rem 0 0 0;
+          grid-column: 2/3;
+          grid-row: 1/2;
+          justify-self: end;
+          align-self: center;
+          color: #2b4c85; }
+        .resume .right__projects .right__project-skills {
+          grid-column: 1/3;
+          grid-row: 2/3;
+          justify-self: start;
+          align-self: center; }
+        .resume .right__projects .right__project-details {
+          grid-column: 1/3;
+          grid-row: 3/4;
+          justify-self: start;
+          align-self: center; }
