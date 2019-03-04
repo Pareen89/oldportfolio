@@ -8,7 +8,7 @@ $lightFontColor:rgb(134, 142, 150);
 
 
 #resume {
-    display: none;
+    //display: none;
 }
 
 
@@ -40,7 +40,12 @@ $lightFontColor:rgb(134, 142, 150);
         @include respond(tab-land) {
             height: calc(100vh - 3rem);
             overflow: hidden;
-            ;
+        }
+
+        @include respond(tab-port) {
+            grid-template-columns: 1fr;
+            grid-template-rows: 5rem 1fr;
+
         }
     }
 
@@ -55,6 +60,12 @@ $lightFontColor:rgb(134, 142, 150);
         width: 100%;
         background-color: $backgroundColor;
 
+        @include respond(tab-port) {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            grid-row: 1/2;
+        }
+
         &__img {
             border-radius: 50%;
             border: none;
@@ -63,6 +74,10 @@ $lightFontColor:rgb(134, 142, 150);
             grid-row: 1/2;
             justify-self: center;
             align-self: end;
+
+            @include respond(tab-port) {
+                display: none;
+            }
         }
 
         &__list {
@@ -75,8 +90,25 @@ $lightFontColor:rgb(134, 142, 150);
             font-weight: bold;
             color: white;
 
+            @include respond(tab-port) {
+                grid-row: 1/2;
+                display: flex;
+                justify-content: space-around;
+                width: 100vw;
+
+            }
+
+            @include respond(phone) {
+                font-size: 1.4rem;
+            }
+
             &-items {
                 padding: 2.8rem 0;
+
+                @include respond(tab-port) {
+                    padding: 0;
+
+                }
 
                 a {
                     padding: 2rem;
@@ -86,13 +118,16 @@ $lightFontColor:rgb(134, 142, 150);
                     letter-spacing: 0.2rem;
                     transition: all 0.5s ease-in-out;
 
+                    @include respond(tab-port) {
+                        padding: 2rem 0rem;
+                    }
+
                     &:active {
                         color: white;
                     }
 
                     &:hover {
                         color: $darkFontColor;
-
                     }
                 }
             }
@@ -104,10 +139,19 @@ $lightFontColor:rgb(134, 142, 150);
         overflow: scroll;
         color: $lightFontColor;
 
+        @include respond(tab-port) {
+            grid-column: 1/2;
+            grid-row: 2/3;
+        }
+
         &__category {
             border-top: 0.1rem solid $lightFontColor;
             padding: 5rem;
             font-size: 1.8rem;
+
+            @include respond(phone) {
+                padding: 3rem;
+            }
         }
 
         &__about {
@@ -115,13 +159,31 @@ $lightFontColor:rgb(134, 142, 150);
             height: calc(100vh - 7.15rem);
             display: grid;
             grid-template-columns: 1fr;
-            grid-template-rows: 1fr 1fr 1fr 1fr;
+            grid-auto-rows: 1fr 1fr 1fr 1fr;
+
+            @include respond(phone) {
+                padding: 1rem;
+                grid-template-rows: auto auto auto auto auto auto;
+
+            }
 
             &-name {
                 font-size: 7rem;
                 letter-spacing: 0.3rem;
                 color: $darkFontColor;
                 align-self: end;
+
+                @include respond(tab-port) {
+                    align-self: end;
+                    justify-self: center;
+                    white-space: nowrap;
+
+                }
+
+                @include respond(phone) {
+                    font-size: 3.5rem;
+                    grid-row: 2/3;
+                }
 
                 span {
                     color: $backgroundColor;
@@ -130,11 +192,37 @@ $lightFontColor:rgb(134, 142, 150);
 
             &-address {
                 font-size: 2rem;
+                justify-self: start;
+                align-self: start;
+
+                @include respond(tab-port) {
+                    white-space: nowrap;
+                    justify-self: center;
+
+                }
+
+                @include respond(phone) {
+                    font-size: 1.2rem;
+                    grid-row: 3/4;
+                    padding-top: 0.5rem;
+
+                }
+
 
             }
 
             &-info {
                 font-size: 2rem;
+
+                @include respond(tab-port) {
+                    text-align: center;
+                }
+
+                @include respond(phone) {
+                    font-size: 1.8rem;
+                    grid-row: 4/5;
+                    padding: 5rem 0;
+                }
 
             }
 
@@ -142,10 +230,25 @@ $lightFontColor:rgb(134, 142, 150);
                 font-size: 5rem;
                 color: $darkFontColor;
 
+                @include respond(tab-port) {
+                    justify-self: center;
+                    display: flex;
+                }
+
+                @include respond(phone) {
+                    font-size: 3rem;
+                    grid-row: 5/6;
+                }
+
                 i {
                     margin-right: 5rem;
                     cursor: pointer;
                     transition: all 0.5s ease-in-out;
+
+                    @include respond(tab-port) {
+                        margin-right: 0;
+                        padding: 0 4rem;
+                    }
                 }
 
                 .fa-github {
@@ -177,13 +280,23 @@ $lightFontColor:rgb(134, 142, 150);
     text-transform: uppercase;
     letter-spacing: 0.3rem;
     color: $darkFontColor;
+
+    @include respond(tab-port) {
+        text-align: center;
+    }
 }
 
 .topic {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 1fr 1fr 1fr;
+    grid-auto-rows: auto auto auto;
     padding: 2rem 0;
+
+    @include respond(tab-port) {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        text-align: center;
+    }
 
     &-name {
         font-size: 2.5rem;
@@ -195,6 +308,10 @@ $lightFontColor:rgb(134, 142, 150);
         justify-self: start;
         align-self: center;
         color: $darkFontColor;
+
+        @include respond(tab-port) {
+            justify-self: center;
+        }
 
         span {
             padding-left: 0.5rem;
@@ -212,7 +329,12 @@ $lightFontColor:rgb(134, 142, 150);
                     color: $lightFontColor;
                 }
             }
+
+            @include respond(tab-port) {
+                display: none;
+            }
         }
+
     }
 
     &-date {
@@ -222,6 +344,12 @@ $lightFontColor:rgb(134, 142, 150);
         justify-self: end;
         align-self: center;
         color: $backgroundColor;
+
+        @include respond(tab-port) {
+            justify-self: center;
+            grid-column: 1/2;
+            grid-row: 4/5;
+        }
     }
 
     &-skills {
@@ -231,6 +359,11 @@ $lightFontColor:rgb(134, 142, 150);
         align-self: center;
         font-weight: 500;
         letter-spacing: 0.1rem;
+        padding-top: 0.5rem;
+
+        @include respond(tab-port) {
+            justify-self: center;
+        }
     }
 
     &-details {
@@ -238,6 +371,11 @@ $lightFontColor:rgb(134, 142, 150);
         grid-row: 3/4;
         justify-self: start;
         align-self: start;
+        padding-top: 2rem;
+
+        @include respond(tab-port) {
+            justify-self: center;
+        }
     }
 
     &-icons {
@@ -247,6 +385,10 @@ $lightFontColor:rgb(134, 142, 150);
         align-self: center;
         font-size: 5rem;
         color: $lightFontColor;
+
+        @include respond(tab-port) {
+            justify-self: center;
+        }
 
         i {
             padding-right: 2rem;
