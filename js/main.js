@@ -233,4 +233,3 @@ parkingListIcon.addEventListener("click", function () {
   parkingListIcon.style.backgroundColor = "rgba(125,125,125,0.5)";
   startSlide();
 });
-
