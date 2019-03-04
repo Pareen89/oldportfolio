@@ -121,9 +121,6 @@ $breakpoint:
 
 html {
   font-size: 62.5%; }
-  @media only screen and (max-width: 37.5em) {
-    html {
-      font-size: 59%; } }
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
@@ -665,6 +662,9 @@ body {
   display: none; }
 
 #parkingList {
+  display: none; }
+
+#resume {
   display: none; }
 
 .resume {
