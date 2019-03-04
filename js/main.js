@@ -20,8 +20,11 @@ let clickedFile = document.getElementById("clickedFile");
 let clickedFolder = document.getElementById("clickedFolder");
 let minProjectFolder = document.getElementById("minProjectFolder");
 let mobileProjects = document.getElementById("mobileProjects");
-let parkingListIcon = document.getElementById('parkingList__icon');
-let parkingList = document.getElementById('parkingList');
+let parkingListIcon = document.getElementById("parkingList__icon");
+let parkingList = document.getElementById("parkingList");
+let resume = document.getElementById("resume");
+let minResumeFile = document.getElementById('minResumeFile');
+let closeResumeFile = document.getElementById('closeResumeFile');
 /////////////////////////////////////////////
 //////////////////Start Menu ///////////////
 ///////////////////////////////////////////
@@ -109,53 +112,65 @@ function timeAndDate() {
 }
 var update = setInterval(timeAndDate, 1000);
 /////////////////////////////////////////////
-////////////////Folder Click////////////////
-///////////////////////////////////////////
-resumeFile.addEventListener("click", function () {
-  resumeFile.style.backgroundColor = "rgba(255, 255, 255, 0.6)";
-});
-projectsFolder.addEventListener("click", function () {
-  projectsFolder.style.backgroundColor = "rgba(255, 255, 255, 0.6)";
-});
-window.addEventListener("mouseup", function (event) {
-  if (event.target !== resumeFile) {
-    resumeFile.style.backgroundColor = "transparent";
-  }
-});
-window.addEventListener("mouseup", function (event) {
-  if (event.target !== projectsFolder) {
-    projectsFolder.style.backgroundColor = "transparent";
-  }
-});
-
-/////////////////////////////////////////////
 /////////////Folder Functions///////////////
 ///////////////////////////////////////////
+// Opening a program
+function open(x, y, z) {
+  // single click to highlight the desktop folders/file
+  x.addEventListener("click", function () {
+    x.style.backgroundColor = "rgba(255, 255, 255, 0.6)";
+  });
+  // remove highlight when clicked anywhere ouside of Folder/File
+  window.addEventListener("mouseup", function (event) {
+    if (event.target !== x) {
+      x.style.backgroundColor = "transparent";
+    }
+  });
+  // double click to open desktop folders/file
+  x.addEventListener("dblclick", function () {
+    y.style.display = "inherit";
+    z.style.display = "inherit";
+    z.style.background = "rgb(80, 80, 80)";
+  });
+}
+open(projectsFolder, projects, clickedFolder); // Project Folder
+open(resumeFile, resume, clickedFile); // Resume File
 
-// Project Folder (desktop version)
-projectsFolder.addEventListener("dblclick", function () {
-  projects.style.display = "inherit";
-  clickedFolder.style.display = "inherit";
-  clickedFolder.style.background = "rgb(80, 80, 80)";
-});
+// Closing a program
+function close(x, y, z) {
+  x.addEventListener("click", function () {
+    y.style.display = "none";
+    z.style.display = "none";
+  });
+}
+close(closeProjectFolder, projects, clickedFolder); // Project Folder
+close(closeResumeFile, resume, clickedFile); // Resume File
 
-closeProjectFolder.addEventListener("click", function () {
-  projects.style.display = "none";
-  clickedFolder.style.display = "none";
-});
-minProjectFolder.addEventListener("click", function () {
-  projects.style.display = "none";
-  clickedFolder.style.backgroundColor = "transparent";
-});
-clickedFolder.addEventListener("click", function () {
-  if (projects.style.display == "none") {
-    projects.style.display = "inherit";
-    clickedFolder.style.backgroundColor = "rgb(80, 80, 80)";
-  } else {
-    projects.style.display = "none";
-    clickedFolder.style.backgroundColor = "transparent";
-  }
-});
+// Min the folder/file
+function min(x, y, z) {
+  x.addEventListener("click", function () {
+    y.style.display = "none";
+    z.style.backgroundColor = "transparent";
+  });
+}
+min(minProjectFolder, projects, clickedFolder); // Project Folder
+min(minResumeFile, resume, clickedFile); // resume file
+
+// closing and opening programs from Taskbar Icons
+function taskbarIcons(x, y) {
+  x.addEventListener("click", function () {
+    if (y.style.display == "none") {
+      y.style.display = "inherit";
+      x.style.backgroundColor = "rgb(80, 80, 80)";
+    } else {
+      y.style.display = "none";
+      x.style.backgroundColor = "transparent";
+    }
+  });
+}
+taskbarIcons(clickedFolder, projects); // Project Folder
+taskbarIcons(clickedFile, resume); // Resume FIle
+
 // Projects Folder (mobile)
 mobileProjects.addEventListener("click", function () {
   if (projects.style.display == "none") {
@@ -165,46 +180,12 @@ mobileProjects.addEventListener("click", function () {
   }
 });
 
-// resume file (desktop version)
-resumeFile.addEventListener("dblclick", loadResume);
-clickedFile.addEventListener("click", function () {
-  resume.style.display = "inherit";
-  clickedFile.style.backgroundColor = "inherit";
-  loadResume2();
-});
-/////////////////////////////////////////////
-///////////////////Ajax/////////////////////
-///////////////////////////////////////////
-// Ajax calls for resume file
-function loadResume() {
-  clickedFile.style.display = "inherit";
-  clickedFile.style.background = "rgb(80, 80, 80)";
-  var xhr = new XMLHttpRequest();
-  xhr.open(
-    "GET",
-    "https://pareen89.github.io/portfolio/html/resume.html",
-    //"../html/resume.html",
-    true
-  );
-  xhr.onload = function () {
-    if (this.status == 200) {
-      document.getElementById("resume").innerHTML = this.responseText;
-      var head = document.getElementsByTagName("head")[0];
-      script = document.createElement("script");
-      script.src = "js/resume.js";
-      head.appendChild(script);
-    } else {
-      document.getElementById("resume").innerHTML = "Not Found";
-    }
-  };
-  xhr.send();
-}
 /////////////////////////////////////////////
 /////////////////SlideShow//////////////////
 ///////////////////////////////////////////
-let sliderImage = document.querySelectorAll('.slideshow__image');
-let leftArrow = document.querySelector('#slideshow__left');
-let rightArrow = document.querySelector('#slideshow__right');
+let sliderImage = document.querySelectorAll(".slideshow__image");
+let leftArrow = document.querySelector("#slideshow__left");
+let rightArrow = document.querySelector("#slideshow__right");
 let current = 0;
 // clear all images
 function reset() {
@@ -230,25 +211,30 @@ function slideRight() {
   current++;
 }
 // left arrow click
-leftArrow.addEventListener('click', function () {
+leftArrow.addEventListener("click", function () {
   if (current === 0) {
     current = sliderImage.length;
-
   }
   slideLeft();
-})
+});
 // right arrow click
-rightArrow.addEventListener('click', function () {
+rightArrow.addEventListener("click", function () {
   if (current === sliderImage.length - 1) {
     current = -1;
   }
   slideRight();
-})
-startSlide();
+});
+
 /////////////////////////////////////////////
 //////////////Display Icons/////////////////
 ///////////////////////////////////////////
-parkingListIcon.addEventListener('click', function () {
+parkingListIcon.addEventListener("click", function () {
   parkingList.style.display = "block";
+<<<<<<< HEAD
+  parkingListIcon.style.backgroundColor = "rgba(125,125,125,0.5)";
+  startSlide();
+});
+=======
   parkingListIcon.style.backgroundColor = "rgba(125,125,125,0.5)"
 })
+>>>>>>> 967c7ded683523daf6a2526036da8d4f1b14a1d1
