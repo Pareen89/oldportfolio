@@ -182,8 +182,8 @@ function loadResume() {
   var xhr = new XMLHttpRequest();
   xhr.open(
     "GET",
-    // "https://pareen89.github.io/portfolio/html/resume.html",
-    "../html/resume.html",
+     "https://pareen89.github.io/portfolio/html/resume.html",
+    //"../html/resume.html",
     true
   );
   xhr.onload = function () {
