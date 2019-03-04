@@ -230,11 +230,6 @@ rightArrow.addEventListener("click", function () {
 ///////////////////////////////////////////
 parkingListIcon.addEventListener("click", function () {
   parkingList.style.display = "block";
-<<<<<<< HEAD
   parkingListIcon.style.backgroundColor = "rgba(125,125,125,0.5)";
   startSlide();
 });
-=======
-  parkingListIcon.style.backgroundColor = "rgba(125,125,125,0.5)"
-})
->>>>>>> 967c7ded683523daf6a2526036da8d4f1b14a1d1
