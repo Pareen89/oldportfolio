@@ -20,10 +20,12 @@ let clickedFile = document.getElementById("clickedFile");
 let clickedFolder = document.getElementById("clickedFolder");
 let minProjectFolder = document.getElementById("minProjectFolder");
 let mobileProjects = document.getElementById("mobileProjects");
+let parkingListIcon = document.getElementById('parkingList__icon');
+let parkingList = document.getElementById('parkingList');
 /////////////////////////////////////////////
 //////////////////Start Menu ///////////////
 ///////////////////////////////////////////
-windows.addEventListener("click", function() {
+windows.addEventListener("click", function () {
   if (startMenu.classList.contains("startMenu-toggle")) {
     startMenu.classList.remove("startMenu-toggle");
   } else {
@@ -34,11 +36,11 @@ windows.addEventListener("click", function() {
 /////////////////////////////////////////////
 //////////////Notification Click ///////////
 ///////////////////////////////////////////
-icon.addEventListener("click", function() {
+icon.addEventListener("click", function () {
   notification.innerHTML = "";
   aboutme.classList.toggle("aboutme-toggle");
 });
-about.addEventListener("click", function() {
+about.addEventListener("click", function () {
   notification.innerHTML = "";
   aboutme.classList.toggle("aboutme-toggle");
 });
@@ -109,18 +111,18 @@ var update = setInterval(timeAndDate, 1000);
 /////////////////////////////////////////////
 ////////////////Folder Click////////////////
 ///////////////////////////////////////////
-resumeFile.addEventListener("click", function() {
+resumeFile.addEventListener("click", function () {
   resumeFile.style.backgroundColor = "rgba(255, 255, 255, 0.6)";
 });
-projectsFolder.addEventListener("click", function() {
+projectsFolder.addEventListener("click", function () {
   projectsFolder.style.backgroundColor = "rgba(255, 255, 255, 0.6)";
 });
-window.addEventListener("mouseup", function(event) {
+window.addEventListener("mouseup", function (event) {
   if (event.target !== resumeFile) {
     resumeFile.style.backgroundColor = "transparent";
   }
 });
-window.addEventListener("mouseup", function(event) {
+window.addEventListener("mouseup", function (event) {
   if (event.target !== projectsFolder) {
     projectsFolder.style.backgroundColor = "transparent";
   }
@@ -131,21 +133,21 @@ window.addEventListener("mouseup", function(event) {
 ///////////////////////////////////////////
 
 // Project Folder (desktop version)
-projectsFolder.addEventListener("dblclick", function() {
+projectsFolder.addEventListener("dblclick", function () {
   projects.style.display = "inherit";
   clickedFolder.style.display = "inherit";
   clickedFolder.style.background = "rgb(80, 80, 80)";
 });
 
-closeProjectFolder.addEventListener("click", function() {
+closeProjectFolder.addEventListener("click", function () {
   projects.style.display = "none";
   clickedFolder.style.display = "none";
 });
-minProjectFolder.addEventListener("click", function() {
+minProjectFolder.addEventListener("click", function () {
   projects.style.display = "none";
   clickedFolder.style.backgroundColor = "transparent";
 });
-clickedFolder.addEventListener("click", function() {
+clickedFolder.addEventListener("click", function () {
   if (projects.style.display == "none") {
     projects.style.display = "inherit";
     clickedFolder.style.backgroundColor = "rgb(80, 80, 80)";
@@ -155,7 +157,7 @@ clickedFolder.addEventListener("click", function() {
   }
 });
 // Projects Folder (mobile)
-mobileProjects.addEventListener("click", function() {
+mobileProjects.addEventListener("click", function () {
   if (projects.style.display == "none") {
     projects.style.display = "inherit";
   } else {
@@ -165,7 +167,7 @@ mobileProjects.addEventListener("click", function() {
 
 // resume file (desktop version)
 resumeFile.addEventListener("dblclick", loadResume);
-clickedFile.addEventListener("click", function() {
+clickedFile.addEventListener("click", function () {
   resume.style.display = "inherit";
   clickedFile.style.backgroundColor = "inherit";
   loadResume2();
@@ -184,7 +186,7 @@ function loadResume() {
     "../html/resume.html",
     true
   );
-  xhr.onload = function() {
+  xhr.onload = function () {
     if (this.status == 200) {
       document.getElementById("resume").innerHTML = this.responseText;
       var head = document.getElementsByTagName("head")[0];
@@ -197,3 +199,56 @@ function loadResume() {
   };
   xhr.send();
 }
+/////////////////////////////////////////////
+/////////////////SlideShow//////////////////
+///////////////////////////////////////////
+let sliderImage = document.querySelectorAll('.slideshow__image');
+let leftArrow = document.querySelector('#slideshow__left');
+let rightArrow = document.querySelector('#slideshow__right');
+let current = 0;
+// clear all images
+function reset() {
+  for (let i = 0; i < sliderImage.length; i++) {
+    sliderImage[i].style.display = "none";
+  }
+}
+// Init slides
+function startSlide() {
+  reset();
+  sliderImage[0].style.display = "inherit";
+}
+// Show prev slide
+function slideLeft() {
+  reset();
+  sliderImage[current - 1].style.display = "inherit";
+  current--;
+}
+// show next slide
+function slideRight() {
+  reset();
+  sliderImage[current + 1].style.display = "inherit";
+  current++;
+}
+// left arrow click
+leftArrow.addEventListener('click', function () {
+  if (current === 0) {
+    current = sliderImage.length;
+
+  }
+  slideLeft();
+})
+// right arrow click
+rightArrow.addEventListener('click', function () {
+  if (current === sliderImage.length - 1) {
+    current = -1;
+  }
+  slideRight();
+})
+startSlide();
+/////////////////////////////////////////////
+//////////////Display Icons/////////////////
+///////////////////////////////////////////
+parkingListIcon.addEventListener('click', function () {
+  parkingList.style.display = "block";
+  parkingListIcon.style.backgroundColor = "rgba(125,125,125,0.5)"
+})

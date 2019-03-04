@@ -657,6 +657,12 @@ body {
           justify-self: center;
           align-self: center; }
 
+#projects {
+  display: none; }
+
+#parkingList {
+  display: none; }
+
 h1,
 h2,
 h3,

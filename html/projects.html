@@ -29,7 +29,7 @@
             <div class="projects__folder-left scroll-two">
                 <!--For CSS will be under the display icon list-->
                 <ul class="display">
-                    <li class="display__item display__itemHoverProjectsColor">
+                    <li id="parkingList__icon" class="display__item display__itemHoverProjectsColor">
                         <i class="fas fa-car car display__item-icon display__item-iconProjectsBackgroundColor"></i>
                         <p class="display__item-name display__item-nameProjectsColor">
                             ParkingList
@@ -62,11 +62,17 @@
                         <img id="slideshow__image" class="slideshow__image" src="../img/pl_contact.PNG" alt="">
                         <img id="slideshow__image" class="slideshow__image" src="../img/pl_search.PNG" alt="">
                     </div>
+                    <div class="info">
+
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     <script>
+        /////////////////////////////////////////////
+        /////////////////SlideShow//////////////////
+        ///////////////////////////////////////////
         let sliderImage = document.querySelectorAll('.slideshow__image');
         let leftArrow = document.querySelector('#slideshow__left');
         let rightArrow = document.querySelector('#slideshow__right');
@@ -110,5 +116,14 @@
             slideRight();
         })
         startSlide();
+        /////////////////////////////////////////////
+        //////////////Display Icons/////////////////
+        ///////////////////////////////////////////
+        let parkingListIcon = document.getElementById('parkingList__icon');
+        let parkingList = document.getElementById('parkingList');
+        parkingListIcon.addEventListener('click', function () {
+            parkingList.style.display = "block";
+            parkingListIcon.style.backgroundColor = 'rgba(125,125,125,0.5)';
+        })
     </script>
 </body>
