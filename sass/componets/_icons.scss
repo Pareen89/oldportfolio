@@ -1,16 +1,28 @@
 //****************************//
 //        Icon Colors         //
 //****************************//
+$calulator: rgb(255, 165, 0);
+$car: rgb(255, 255, 255);
+$codepen: rgb(120, 120, 120);
+$file: rgb(236, 236, 236);
+$folder:rgb(255, 208, 151);
+$github:rgb(68, 108, 179);
+$linkedIn:rgb(0, 119, 181);
+$notepad:rgb(135, 206, 235);
+$paint:rgba(230, 126, 34, 1);
+$profile: rgb(23, 234, 153);
+$profile2:rgb(32, 123, 123);
+
 .calculator {
-    color: rgb(255, 165, 0);
+    color: $calulator;
 }
 
 .car {
-    color: rgb(255, 255, 255);
+    color: $car;
 }
 
 .codepen {
-    color: rgb(120, 120, 120);
+    color: $codepen;
 }
 
 .compress {
@@ -18,33 +30,33 @@
 }
 
 .file {
-    color: rgb(236, 227, 227);
+    color: $file;
 }
 
 .folder {
-    color: rgb(255, 208, 151);
+    color: $folder;
 }
 
 .github {
-    color: rgba(68, 108, 179, 1);
+    color: $github;
 }
 
 .linkedin {
-    color: rgb(0, 119, 181);
+    color: $linkedIn;
 }
 
 .notepad {
-    color: rgb(135, 206, 235);
+    color: $notepad;
 }
 
 .paint {
-    color: rgba(230, 126, 34, 1);
+    color: $paint;
 }
 
 .profile {
-    color: rgb(23, 234, 153);
+    color: $profile;
 }
 
 .profile2 {
-    color: rgb(32, 123, 123);
+    color: $profile2;
 }

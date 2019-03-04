@@ -19,18 +19,19 @@ let projects = document.getElementById("projects");
 let clickedFile = document.getElementById("clickedFile");
 let clickedFolder = document.getElementById("clickedFolder");
 let minProjectFolder = document.getElementById("minProjectFolder");
-let mobileProjects = document.getElementById('mobileProjects');
+let mobileProjects = document.getElementById("mobileProjects");
+let parkingListIcon = document.getElementById('parkingList__icon');
+let parkingList = document.getElementById('parkingList');
 /////////////////////////////////////////////
 //////////////////Start Menu ///////////////
 ///////////////////////////////////////////
 windows.addEventListener("click", function () {
-  if (startMenu.classList.contains('startMenu-toggle')) {
-    startMenu.classList.remove('startMenu-toggle');
+  if (startMenu.classList.contains("startMenu-toggle")) {
+    startMenu.classList.remove("startMenu-toggle");
   } else {
-    startMenu.classList.add('startMenu-toggle');
+    startMenu.classList.add("startMenu-toggle");
   }
 });
-
 
 /////////////////////////////////////////////
 //////////////Notification Click ///////////
@@ -165,33 +166,89 @@ mobileProjects.addEventListener("click", function () {
 });
 
 // resume file (desktop version)
-resumeFile.addEventListener('dblclick', loadResume);
-clickedFile.addEventListener('click', function () {
+resumeFile.addEventListener("dblclick", loadResume);
+clickedFile.addEventListener("click", function () {
   resume.style.display = "inherit";
   clickedFile.style.backgroundColor = "inherit";
   loadResume2();
-})
+});
 /////////////////////////////////////////////
 ///////////////////Ajax/////////////////////
 ///////////////////////////////////////////
 // Ajax calls for resume file
 function loadResume() {
-
   clickedFile.style.display = "inherit";
   clickedFile.style.background = "rgb(80, 80, 80)";
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', '../html/resume.html', true);
+  xhr.open(
+    "GET",
+    // "https://pareen89.github.io/portfolio/html/resume.html",
+    "../html/resume.html",
+    true
+  );
   xhr.onload = function () {
     if (this.status == 200) {
-      document.getElementById('resume').innerHTML = this.responseText;
-      var head = document.getElementsByTagName('head')[0];
-      script = document.createElement('script');
+      document.getElementById("resume").innerHTML = this.responseText;
+      var head = document.getElementsByTagName("head")[0];
+      script = document.createElement("script");
       script.src = "js/resume.js";
       head.appendChild(script);
-
     } else {
-      document.getElementById('resume').innerHTML = 'Not Found'
+      document.getElementById("resume").innerHTML = "Not Found";
     }
-  }
+  };
   xhr.send();
 }
+/////////////////////////////////////////////
+/////////////////SlideShow//////////////////
+///////////////////////////////////////////
+let sliderImage = document.querySelectorAll('.slideshow__image');
+let leftArrow = document.querySelector('#slideshow__left');
+let rightArrow = document.querySelector('#slideshow__right');
+let current = 0;
+// clear all images
+function reset() {
+  for (let i = 0; i < sliderImage.length; i++) {
+    sliderImage[i].style.display = "none";
+  }
+}
+// Init slides
+function startSlide() {
+  reset();
+  sliderImage[0].style.display = "inherit";
+}
+// Show prev slide
+function slideLeft() {
+  reset();
+  sliderImage[current - 1].style.display = "inherit";
+  current--;
+}
+// show next slide
+function slideRight() {
+  reset();
+  sliderImage[current + 1].style.display = "inherit";
+  current++;
+}
+// left arrow click
+leftArrow.addEventListener('click', function () {
+  if (current === 0) {
+    current = sliderImage.length;
+
+  }
+  slideLeft();
+})
+// right arrow click
+rightArrow.addEventListener('click', function () {
+  if (current === sliderImage.length - 1) {
+    current = -1;
+  }
+  slideRight();
+})
+startSlide();
+/////////////////////////////////////////////
+//////////////Display Icons/////////////////
+///////////////////////////////////////////
+parkingListIcon.addEventListener('click', function () {
+  parkingList.style.display = "block";
+  parkingListIcon.style.backgroundColor = "rgba(125,125,125,0.5)"
+})

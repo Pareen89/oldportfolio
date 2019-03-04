@@ -33,7 +33,7 @@
 
         &-left {
             width: 100%;
-            overflow: hidden;
+            overflow: scroll;
             grid-column: 1/2;
             grid-row: 1/2;
             border-right: 0.2rem solid #f4f4f4;
@@ -57,55 +57,55 @@
             }
 
             .slideshow {
+                padding: 2rem 0;
                 display: grid;
                 grid-template-columns: 2rem 1fr 2rem;
                 grid-template-rows: 1fr;
-                font-size: 1.5rem;
-                background-color: rgba(244, 244, 244, 0.7);
+                justify-self: center;
 
-                @include respond(phone) {
-                    margin-top: 2rem;
-                }
-
-                &__leftarrow {
-                    grid-column: 1/2;
-                    grid-row: 1/2;
-                    z-index: 2;
-                    width: 100%;
-                    height: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
+                i {
+                    font-size: 1.5rem;
+                    justify-self: center;
+                    align-self: center;
+                    padding: 2rem 0;
+                    transition: all 0.3s ease-in-out;
                     cursor: pointer;
-                }
 
-                &__rightarrow {
-                    grid-column: 3/4;
-                    grid-row: 1/2;
-                    width: 100%;
-                    height: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    z-index: 2;
-                    cursor: pointer;
-                }
-
-                &__img {
-                    grid-column: 2/3;
-                    grid-row: 1/2;
-                    width: calc(75vw - 4rem);
-                    z-index: 1;
-
-                    @include respond(phone) {
-                        width: 100vw;
+                    &:hover {
+                        color: rgb(134, 131, 131);
                     }
                 }
+
+                &__left {
+                    grid-column: 1/2;
+                    grid-row: 1/2;
+
+                }
+
+                &__right {
+                    grid-column: 3/4;
+                    grid-row: 1/2;
+
+                }
+
+                &__image {
+                    grid-column: 2/3;
+                    width: 100%;
+                    height: auto;
+                    grid-row: 1/2;
+                    justify-self: center;
+                    align-self: center;
+                }
             }
+
         }
     }
 }
 
 #projects {
+    display: none;
+}
+
+#parkingList {
     display: none;
 }
