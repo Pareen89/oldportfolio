@@ -179,6 +179,13 @@ mobileProjects.addEventListener("click", function () {
     projects.style.display = "none";
   }
 });
+mobileResume.addEventListener("click", function () {
+  if (resume.style.display == "none") {
+    resume.style.display = "inherit";
+  } else {
+    resume.style.display = "none";
+  }
+});
 
 /////////////////////////////////////////////
 /////////////////SlideShow//////////////////
