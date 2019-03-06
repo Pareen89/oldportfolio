@@ -1,0 +1,30 @@
+.calculator-screen {
+    height: 5rem;
+    width: 35rem;
+    border: 0.1rem solid black;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.calculator-buttons {
+    font-size: 2rem;
+    width: 35rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    border: 0.1rem solid black;
+    column-gap: 0.5rem;
+    row-gap: 0.5rem;
+}
+
+.calculator-button {
+    justify-self: center;
+    align-self: center;
+    list-style-type: none;
+    width: auto;
+    height: auto;
+    background-color: beige;
+
+}
